@@ -15,7 +15,7 @@
 ## QUÁ TRÌNH MÔN HỌC
 <a name ="quatrinh"></a>
 ### 1.Lập trình Python
-* tuan 1 - *warm up*
+* assignments week 1 - *warm up*
 
 
 ## GIẢNG VIÊN HƯỚNG DẪN
