@@ -1,6 +1,7 @@
 # CS114.L21
 ## BẢNG MỤC LỤC
 * [ Giới thiệu môn học](#gioithieumonhoc)
+* [Quá trình môn học](#quatrinh)
 * [ Giảng viên hướng dẫn](#giangvien)
 * [ Thành viên nhóm](#thanhvien)
 * [ Đồ án môn học](#doan)
@@ -11,6 +12,11 @@
 * **Lớp học**: CS114.L21
 * **Ngày bắt đầu**: 01/03/2021
 * **Năm học**: 2020-2021
+## QUA TRINH MON HOC
+<a name ="quatrinh"></a>
+### 1.Lập trình Python
+* tuan 1 - *warm up*
+
 
 ## GIẢNG VIÊN HƯỚNG DẪN
 <a name="giangvien"></a>
