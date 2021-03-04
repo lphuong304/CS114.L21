@@ -12,7 +12,7 @@
 * **Lớp học**: CS114.L21
 * **Ngày bắt đầu**: 01/03/2021
 * **Năm học**: 2020-2021
-## QUA TRINH MON HOC
+## QUÁ TRÌNH MÔN HỌC
 <a name ="quatrinh"></a>
 ### 1.Lập trình Python
 * tuan 1 - *warm up*
