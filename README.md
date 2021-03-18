@@ -16,7 +16,7 @@
 <a name ="quatrinh"></a>
 ### 1.Lập trình Python
 * assignments week 1 - *warm up*
-
+* assignments 2.1 - *chú ý thời gian chạy chương trình*
 
 ## GIẢNG VIÊN HƯỚNG DẪN
 <a name="giangvien"></a>
