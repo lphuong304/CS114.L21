@@ -33,4 +33,4 @@
 
 ## ĐỒ ÁN MÔN HỌC
 <a name="doan"></a>
-1. Tên đồ án: SỐ HOÁ TỦ SÁCH
+1. Tên đồ án: ỨNG DỤNG QUẢN LÝ HÌNH ẢNH TRÊN THIẾT BỊ DI ĐỘNG
