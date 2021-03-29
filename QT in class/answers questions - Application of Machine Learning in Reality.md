@@ -18,4 +18,7 @@ Nhóm:
 * Output: thông tin quyển sách, tên bìa, tên tác giả,...
 * Sample: Hệ thống quản lý sách trong thư viện,...
 
+![answer](https://user-images.githubusercontent.com/55471582/112790215-13151480-9089-11eb-841f-dbd0ecaddec0.jpg)
+
+
 **Credit**: towardstodatascience.com
