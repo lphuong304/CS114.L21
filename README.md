@@ -1,4 +1,4 @@
-<img src="https://en.uit.edu.vn/sites/vi/files/banner_0.png" width="454">
+<h1><center><center><center><img src="https://en.uit.edu.vn/sites/vi/files/banner_0.png" width="454"></center></h1>
 
 # CS114.L21
 ## BẢNG MỤC LỤC
