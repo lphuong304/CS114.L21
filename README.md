@@ -1,3 +1,5 @@
+<img src="https://en.uit.edu.vn/sites/vi/files/banner_0.png" width="454">
+
 # CS114.L21
 ## BẢNG MỤC LỤC
 * [ Giới thiệu môn học](#gioithieumonhoc)
