@@ -1,4 +1,12 @@
-<h1><center><center><center><img src="https://en.uit.edu.vn/sites/vi/files/banner_0.png" width="454"></center></h1>
+<p align="center">
+  <a href="https://www.uit.edu.vn/" title="Trường Đại học Công nghệ Thông tin" style="border: 5;">
+    <img src="https://i.imgur.com/WmMnSRt.png" alt="Trường Đại học Công nghệ Thông tin | University of Information Technology">
+  </a>
+</p>
+
+<!-- Title -->
+<h1 align="center"><b>CS114.L21 - MÁY HỌC</b></h1>
+
 
 # CS114.L21
 ## BẢNG MỤC LỤC
