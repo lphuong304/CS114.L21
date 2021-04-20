@@ -8,7 +8,7 @@
 <h1 align="center"><b>CS114.L21 - MÁY HỌC</b></h1>
 
 
-# CS114.L21
+
 ## BẢNG MỤC LỤC
 * [ Giới thiệu môn học](#gioithieumonhoc)
 * [Quá trình môn học](#quatrinh)
