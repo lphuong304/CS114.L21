@@ -16,9 +16,16 @@
 * **Năm học**: 2020-2021
 ## QUÁ TRÌNH MÔN HỌC
 <a name ="quatrinh"></a>
-### 1.Lập trình Python
+### 1.LẬP TRÌNH PYTHON
 * assignments week 1 - *warm up*
 * assignments 2.1 - *chú ý thời gian chạy chương trình*
+
+<a name ="colab"></a>
+### 2.COLAB ASSSIGNMENTS
+
+
+<a name ="QT"></a>
+### 3.QT IN CLASS
 
 ## GIẢNG VIÊN HƯỚNG DẪN
 <a name="giangvien"></a>
