@@ -12,11 +12,15 @@ Nhóm:
 * Đầu vào: số km
 * Đầu ra: Giá tiền
 2. Mô hình hồi quy tuyến tính:
-***Ứng dụng tìm hiểu mối hệ giữa liều lợng thuốc và huyết áp của bệnh nhân***
+***Ứng dụng tìm hiểu mối hệ giữa liều lượng thuốc và huyết áp của bệnh nhân***
 * Dữ liệu train:
+
 :point_right:Số thực x1: miligram thuốc dùng trong ngày
+
 :point_right:Số thực x2: chỉ số huyết áp đầu ngày
+
 :point_right:Số thực: sự thay đổi của huyết áp
+
 * Đầu vào:
 số thực x1:miligram thuốc dùng trong ngày
 số thực x2: chỉ số huyết áp đầu ngày
@@ -25,9 +29,13 @@ số thực x2: chỉ số huyết áp đầu ngày
 3. Mô hình hồi quy logistic:
 ***Ứng dụng dự báo khả năng trả nợ của khách hàng***
 * Dữ liệu train:
-:point_right:số thực x1: thu nhập bình quân hằng năm,
+
+:point_right:số thực x1: thu nhập bình quân hằng năm
+
 :point_right:số thực x2: tổng tài sản hiện có
+
 :point_right:số thực y: [0, 1] thể hiện phần trăm nợ có thể trả
+
 * Đầu vào: x1, x2
 * Đầu ra: y
 
