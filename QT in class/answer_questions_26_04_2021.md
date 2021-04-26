@@ -34,7 +34,7 @@ số thực x2: chỉ số huyết áp đầu ngày
 
 :point_right:số thực x2: tổng tài sản hiện có
 
-:point_right:số thực y: [0, 1] thể hiện phần trăm nợ có thể trả
+:point_right:số thực y: nằm trong khoảng [0, 1] thể hiện phần trăm nợ có thể trả
 
 * Đầu vào: x1, x2
 * Đầu ra: y
