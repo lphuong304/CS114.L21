@@ -25,8 +25,8 @@
 ## QUÁ TRÌNH MÔN HỌC
 <a name ="quatrinh"></a>
 ### 1.LẬP TRÌNH PYTHON
-* assignments week 1 - *warm up*
-* assignments 2.1 - *chú ý thời gian chạy chương trình*
+### 2.QT IN CLASS
+### 3.COLAB ASSIGNMENTS
 
 <a name ="colab"></a>
 ### 2.COLAB ASSSIGNMENTS
