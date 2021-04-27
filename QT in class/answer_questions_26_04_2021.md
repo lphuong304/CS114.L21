@@ -28,7 +28,8 @@ Nhóm:
 số thực x1:miligram thuốc dùng trong ngày
 số thực x2: chỉ số huyết áp đầu ngày
 * Đầu ra: sự thay đổi của huyết áp
-
+* Cách thu thập data: thu thập dữ liệu thủ công từ các nguồn tại phường, dữ liệu hành chính từ chương trình quản lý bệnh nhân điện tử (i.PM), và xem xét hồ sơ bệnh án nội trú (tiêu chuẩn vàng) cho liều lượng thuốc của bệnh nhân và chỉ số huyết áp đầu ngày*
+* Xử lý dữ liệu: Chuẩn bị tệp dưới format của một bảng (csv), tạo thành 3 cột dữ liệu (cột liều lượng thuốc - đơn vị mg/ngày, là một con số thực, cột huyết áp - đơn vị mmHg, và cột kết quả - là sự thay đổi của huyết áp)
 3. Mô hình hồi quy logistic:
 ***Ứng dụng dự báo khả năng trả nợ của khách hàng***
 * Dữ liệu train:
