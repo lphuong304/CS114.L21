@@ -9,6 +9,8 @@ Nhóm:
 **Trả lời câu hỏi: Các bài toán giải quyết bằng Machine Learning trong cuộc sống**
 1. Mô hình hồi quy tuyến tính:
 ***Ứng dụng tính giá tiền của một chuyển đi xe ôm công nghệ***
+* Cách thu thập dữ liệu: Dựa trên giá tiền từ xe ôm truyền thống
+* Xử lý dữ liệu: Làm tròn xuống đối với số tiền ứng với km để tăng tính cạnh trạnh
 * Dữ liệu train: Số km và giá tiền ứng với số km của các chuyến đi trước đó
 * Đầu vào: số km
 * Đầu ra: Giá tiền
