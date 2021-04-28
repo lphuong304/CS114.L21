@@ -42,7 +42,7 @@ số thực x2: chỉ số huyết áp đầu ngày
 
 * Đầu vào: x1, x2
 * Đầu ra: y
-* Thu thập data: Liên kết vào xin cấp phép từ các ngân hàng.
+* Thu thập data: Liên kết và xin cấp phép từ các ngân hàng.
 * Xử lý data: 
   * Tạo file dữ liệu dưới dạng .csv với 3 cột : Thu nhập, Tổng tài sản, y(kết quả dự đoán).
   * Đưa file.csv vào chương trình với cấu trúc DataFrame. 
