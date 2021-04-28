@@ -45,5 +45,6 @@ số thực x2: chỉ số huyết áp đầu ngày
 * Thu thập data: Liên kết vào xin cấp phép từ các ngân hàng.
 * Xử lý data: 
   * Tạo file dữ liệu dưới dạng .csv với 3 cột : Thu nhập, Tổng tài sản, y(kết quả dự đoán).
-  * Đưa file.csv vào chương trình với cấu trúc DataFrame. *(DataFrames tương tự như SQL tables hoặc bảng tính mà bạn làm việc trong Excel hoặc Calc, Pandas DataFrame là một cấu trúc chứa dữ liệu hai chiều và các nhãn tương ứng của nó).
+  * Đưa file.csv vào chương trình với cấu trúc DataFrame. 
+  *(DataFrames tương tự như SQL tables hoặc bảng tính mà bạn làm việc trong Excel hoặc Calc, Pandas DataFrame là một cấu trúc chứa dữ liệu hai chiều và các nhãn tương ứng của nó).
   * Xóa hết các hàng có chứa giá trị Null/NaN.
