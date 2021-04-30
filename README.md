@@ -25,8 +25,7 @@
 ## QUÁ TRÌNH MÔN HỌC
 <a name ="quatrinh"></a>
 ### 1.LẬP TRÌNH PYTHON
-### 2.QT IN CLASS
-### 3.COLAB ASSIGNMENTS
+
 
 <a name ="colab"></a>
 ### 2.COLAB ASSSIGNMENTS
