@@ -17,4 +17,10 @@
 
 
 * Lập trình luyện tập Python - Tuần 2.1 - chú ý thời gian chạy chương trình
-- [x] [assignments week 1 - chú ý thời gian chạy chương trình](https://github.com/lphuong304/CS114.L21/tree/main/L%E1%BA%ADp%20tr%C3%ACnh%20Python/assignments%202.1)
+- [x] [assignments 2.1 - chú ý thời gian chạy chương trình](https://github.com/lphuong304/CS114.L21/tree/main/L%E1%BA%ADp%20tr%C3%ACnh%20Python/assignments%202.1)
+
+* Lập trình luyện tập Python - Tuần 3.1 - ôn tiếp cấu trúc dữ liệu
+- [x] [assignments week 3.1 - ôn tiếp cấu trúc dữ liệu](https://github.com/lphuong304/CS114.L21/tree/main/L%E1%BA%ADp%20tr%C3%ACnh%20Python/assignments%203.1)
+
+* Lập trình luyện tập Python - Tuần 4.1 - bài tập wecode cuối cùng
+- [x] [assignments week 4.1 - bài tập wecode cuối cùng](https://github.com/lphuong304/CS114.L21/tree/main/L%E1%BA%ADp%20tr%C3%ACnh%20Python/assignments%204%20.1)
