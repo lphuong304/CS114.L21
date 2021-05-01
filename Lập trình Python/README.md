@@ -13,7 +13,7 @@
 - [x] [practice](https://github.com/lphuong304/CS114.L21/tree/main/L%E1%BA%ADp%20tr%C3%ACnh%20Python/practice)
 
 * Lập trình luyện tập Python - Tuần 1.2 - tăng tốc từ từ
-- [x] [assignments week 1.2 - tăng tốc từ từ](https://github.com/lphuong304/CS114.L21/tree/main/L%E1%BA%ADp%20tr%C3%ACnh%20Python/assignments%20week%201%20-%20warm%20up)
+- [x] [assignments week 1.2 - tăng tốc từ từ](https://github.com/lphuong304/CS114.L21/tree/main/L%E1%BA%ADp%20tr%C3%ACnh%20Python/assignments%201.2)
 
 
 * Lập trình luyện tập Python - Tuần 2.1 - chú ý thời gian chạy chương trình
