@@ -9,3 +9,6 @@
 
 * BÀI TẬP 17/05/2021
  - [x] [PREDICT SCORE OF STUDENT STUDYING IT001 CLASS](https://github.com/lphuong304/CS114.L21/blob/main/COLAB_ASSIGNMENTS/COLAB_ASSIGNMENT_17_05/PREDICT_FINAL_SCORE_OF_IT001.ipynb) - [![Open in colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1uZr3YYvu2lrmYwNpBXYjQRA-f4gAt02w#scrollTo=sx5UJu99hIa4)
+
+* BÀI TẬP 09/06/2021
+ - [x] [CRAWLING HEALINE FROM NEWS WEBSITES](https://github.com/lphuong304/CS114.L21/blob/main/COLAB_ASSIGNMENTS/COLAB_ASSIGNMENT_09_06/sarcasm_article.ipynb) - [![Open in colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1n6JcWRS1Xn_2pSA4qMK_vpuAKCju9rHM#scrollTo=Ovax-g0jWOnm)
