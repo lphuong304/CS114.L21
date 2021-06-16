@@ -49,4 +49,4 @@
 
 ## ĐỒ ÁN MÔN HỌC
 <a name="doan"></a>
-1. Tên đồ án: ỨNG DỤNG QUẢN LÝ HÌNH ẢNH TRÊN THIẾT BỊ DI ĐỘNG
+1. Tên đồ án: ỨNG DỤNG DEEP LEARNING VÀO MÔ HÌNH SIÊU THỊ KHÔNG THU NGÂN
