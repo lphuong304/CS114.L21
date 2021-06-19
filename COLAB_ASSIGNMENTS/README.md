@@ -14,4 +14,4 @@
  - [x] [CRAWLING HEALINE FROM NEWS WEBSITES](https://github.com/lphuong304/CS114.L21/blob/main/COLAB_ASSIGNMENTS/COLAB_ASSIGNMENT_09_06/sarcasm_article.ipynb) - [![Open in colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1n6JcWRS1Xn_2pSA4qMK_vpuAKCju9rHM#scrollTo=Ovax-g0jWOnm)
 
 * BÀI TẬP 14/06/2021
- - [x] [DETECT SARCASM NEWS BY HEADLINES](https://github.com/lphuong304/CS114.L21/blob/main/COLAB_ASSIGNMENTS/COLAB_ASSIGNMENT_09_06/sarcasm_article.ipynb) - [![Open in colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/11pkRc6L8E4ozOfRtXKPqx_-vorB7wRW9#scrollTo=KVCjpP5OWgas)
+ - [x] [DETECT SARCASM NEWS BY HEADLINES](https://github.com/lphuong304/CS114.L21/blob/main/COLAB_ASSIGNMENTS/COLAB_ASSIGNMENT_14_06/DETECT_SARCASM_NEWS_BY_HEADLINES.ipynb) - [![Open in colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/11pkRc6L8E4ozOfRtXKPqx_-vorB7wRW9#scrollTo=KVCjpP5OWgas)
