@@ -129,3 +129,11 @@ Dữ liệu được tụi em tự thu thập
 </p>
 <div style=width: 130px; align = center>Demo một số hình ảnh trong tập Dữ liệu</div>
 
+<a name="training"></a>
+# **4. Training Và Đánh Giá Model**
+## Giải thích về quá trình Training Model:
+
+<p align ="middle">
+  <img src = "https://user-images.githubusercontent.com/55471582/128622657-efe4d909-718a-4173-be7f-3efea3958b29.png" />
+</p>
+* Sau khi tìm hiểu, chúng em rút kế được cho mình kiến thức về quá trình training như sau:
