@@ -207,6 +207,9 @@ Sau quá trình cân nhắc, nhóm quyết định sẽ sử dụng hai model đ
           + **classes:** số lượng class có trong datasets (cố định trong suốt quá trình train)
           + **filters** (cố định trong suốt quá trình train)
           
+<p align ="middle">
+  <img src ="https://raw.githubusercontent.com/lphuong304/CS114.L21/byPhun/FINAL_PROJECT/Untitled%20Diagram.svg" />
+ </p>
 
 
 <a name="ungdung"></a>
