@@ -12,7 +12,7 @@
   * Lê Đình Duy - *duydl@uit.edu.vn*
   * Phạm Nguyễn Trường An - *truonganpn@uit.edu.vn*
 * Thành viên nhóm:
-<center>
+<p align="center">
 
 | STT    | MSSV          | Họ và Tên              | Github                                              | Email                   |
 | :------: |:-------------:|:----------------------:|:-------------------------------------------------:|:-----------------------:|
@@ -20,7 +20,7 @@
 | 2      | 19521623      | Nguyễn Quốc Huy        |[nguyen-huy-1623](https://github.com/nguyen-huy-1623)|19521263@gm.uit.edu.vn   |
 | 3      | 19522450      | Hoàng Anh Tú           |[19522450](https://github.com/19522450)              |19522450@gm.uit.edu.vn   |
 
-</center>
+</p>
 
 # **BẢNG MỤC LỤC**
 
