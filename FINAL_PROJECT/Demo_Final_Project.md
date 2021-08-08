@@ -1,4 +1,4 @@
-<h1 align="center"><b>Trường Đại Học Công Nghệ Thông Tin - ĐHQH TPHCM</b></h1>
+<h3 align="center" font-size= 14px;><b>Trường Đại Học Công Nghệ Thông Tin - ĐHQH TPHCM</b></h3>
 <p align="center">
   <a href="https://www.uit.edu.vn/" title="Trường Đại học Công nghệ Thông tin" style="border: 5;">
     <img src="https://i.imgur.com/WmMnSRt.png" alt="Trường Đại học Công nghệ Thông tin | University of Information Technology">
@@ -14,34 +14,81 @@
 * Thành viên nhóm:
 <p align="center">
 
-| STT    | MSSV          | Họ và Tên              | Github                                              | Email                   |
-| :------: |:-------------:|:----------------------:|:-------------------------------------------------:|:-----------------------:|
-| 1      | 19520227      | Nguyễn Ngọc Lan Phương |[lphuong304](https://github.com/lphuong304)          |19520227@gm.uit.edu.vn   |
-| 2      | 19521623      | Nguyễn Quốc Huy        |[nguyen-huy-1623](https://github.com/nguyen-huy-1623)|19521263@gm.uit.edu.vn   |
-| 3      | 19522450      | Hoàng Anh Tú           |[19522450](https://github.com/19522450)              |19522450@gm.uit.edu.vn   |
+| STT  |   MSSV   |       Họ và Tên        |                        Github                         |         Email          |
+| :--: | :------: | :--------------------: | :---------------------------------------------------: | :--------------------: |
+|  1   | 19520227 | Nguyễn Ngọc Lan Phương |      [lphuong304](https://github.com/lphuong304)      | 19520227@gm.uit.edu.vn |
+|  2   | 19521623 |    Nguyễn Quốc Huy     | [nguyen-huy-1623](https://github.com/nguyen-huy-1623) | 19521263@gm.uit.edu.vn |
+|  3   | 19522450 |      Hoàng Anh Tú      |        [19522450](https://github.com/19522450)        | 19522450@gm.uit.edu.vn |
 
 </p>
 
 # **BẢNG MỤC LỤC**
 
-<!-- Content -->
+1. [Tổng Quan Về Đồ Án](#tongquan)
+2. [Các Nghiên Cứu Về Bài Toán Của Tiền Nhân](#cacnghiencuu)
+3. [Xây Dựng Bộ Dữ Liệu](#dulieu)
+4. [Training Và Đánh Giá Model](#training)
+5. [Hướng Phát Triển Ứng Dụng Và Cải Tiến](#ungdung)
+6. [Phân Công Công Việc](#phancong)
+7. [Nguồn Tham Khảo](#thamkhao)
 
-# Tổng Quan Về Đồ Án
-## Mô tả bài toán
-* **Ngữ cảnh ứng dụng**: Trong thời đại công nghệ phát triển vượt trội,nhu cầu mua sắm của con người ngày càng cao, song song với sự phát triển mạnh mẽ của thương mại điện tử thì hình thức mua sắm truyền thống vẫn là sự lựa chọn hàng đầu của con người. Dựa trên điều đó, chúng em nảy ra ý tưởng vận dụng Machine Learning hay cụ thể hơn là Deep Learning vào MÔ HÌNH SIÊU THỊ KHÔNG THU NGÂN thông qua bài toán nhận diện sản phẩm thương mại.
+<a name="tongquan"></a>
+# **1. Tổng Quan Về Đồ Án**
+# Mô tả bài toán
 
-* **Tại sao lại là MÔ HÌNH SIÊU THỊ KHÔNG THU NGÂN? Lợi ích so với mô hình truyền thống?**
+* **Ngữ cảnh ứng dụng**: 
+  *   Trong thời đại công nghệ phát triển vượt trội,nhu cầu mua sắm của con người ngày càng cao, song song với sự phát triển mạnh mẽ thương mại điện tử thì hình thức mua sắm truyền thống vẫn là sự lựa chọn hàng đầu của con người. Dựa trên điều đó cộng với việc các hình thức thanh toán điện tử được áp dụng rộng rãi thay cho thanh toán bằng tiền mặt, chúng em nảy ra ý tưởng vận dụng kiến thức Machine Learning hay cụ thể hơn là Deep Learning để giải quyết một bài toán nhỏ trong ứng dụng Mô Hình Siêu Thị Không Thu Ngân - **Bài Toán Nhận Diện Sản Phẩm Thương Mại**
 
-    Sản phẩm đồ án của chúng em sẽ mang đến những lợi ích như sau:
-    + Giúp đẩy nhanh quy trình thanh toán tại các cửa hàng, hạn chế việc chờ đợi xếp hàng.
-    + Ngành công nghiệp bán lẻ ngày càng được đẩy mạnh, thì việc tự động quá khâu thanh toán giúp cắt giảm chi phí nhân lực, giảm các trường hợp dịch vụ không được đánh giá cao do thái độ nhân viên.
-    + Tối ưu hóa trải nghiệm người dùng ở quá trình thanh toán.
-    + Đáng tin cậy hơn so với hình thức thanh toán thủ công
-    + Theo trang Digimarc<!-- https://www.digimarc.com/about/news-events/press-releases/2015/07/21/digimarc-survey-88-percent-of-u.s.-adults-want-their-retail-checkout-experience-to-be-faster -->, 45% khách hàng phàn nàn rằng đôi khi sử dụng mã vạch không tiện lợi
-    + 
-* **INPUT**: Video thời lượng tối đa 1 phút các sản phẩm thương mại, góc quay từ trên xuống, mặt hàng đặt nằm ngửa, quay trực diện sản phẩm, ánh sáng tốt (xét điều kiện ánh sáng siêu thị), mỗi mặt hàng có nhiều mặt (trước, sau), video không nhiễu, chất lượng video tối thiểu là 480p trở lên.
-* **OUTPUT**: Tên sản phẩm thương mại + Số lượng + Gía tiền sản phẩm => Tổng tiền (Hình thức một hóa đơn)
+  * Tuy nhiên trước tiên, chúng ta cần hiểu rõ **Thế nào là Mô hình Siêu thị Không Thu Ngân?**, **Lợi ích của Mô hình Siêu Thị không Thu ngân so với Mô hình Mua sắm Truyền thống thông thường?** 
+    * Mô hình Siêu thị không thu ngân là mô hình ứng dụng các công nghệ trí tuệ nhân tạo vào các cửa hàng siêu thị mô hình thông thường, tận dụng sức mạnh của AI để thay thế nhân lực cụ thể là ở các quầy thanh toán, checkout.
+    * Sản phẩm đồ án của chúng em sẽ mang đến những lợi ích như sau:
+      + Giúp đẩy nhanh quy trình thanh thoán tại các cửa hàng, hạn chế việc chờ đợi xếp hàng.
+      + Ngành công nghiệp bán lẻ ngành càng được đẩy mạnh, thì việc tự động quá khâu thanh toán giúp cắt giảm chi phí nhân lực, giảm các trường hợp dịch vụ không được đánh giá cao do thái độ nhân viên.
+      + Tối ưu hóa trải nghiệm người dùng ở quá trình thanh toán.
+      + Đáng tin cậy hơn so với hình thức thanh toán thủ công.
+      + Theo trang [HaNoi Times](http://hanoitimes.vn/vietnams-retailers-accelerate-shopping-experiences-to-meet-consumer-demand-317284.html),trong cuộc khảo vào năm 2021 ở những nước Châu Á Thái Bình Dương bao gồm cả Việt Nam, 50% người mua sắm được khảo sát đã tương tác với mô hình siêu thị self-checkouts và hơn 60% đồng ý rằng mô hình self-checkouts mang lại trải nghiệm khách hàng cải thiện hơn.
+* **INPUT và OUTPUT Bài toán:**
+  * INPUT: 
+    * Video thời lượng tối đa 1 phút các sản phẩm thương mại
+    * Các sản phẩm trong clip, nếu tính cùng một vật thể thì chỉ xuất hiện đúng 1 lần **(giả sử trong video test nếu sản phẩm đó xuất hiện lần 2 thì được tính là 2 sản phẩm khác nhau)**
+    * Độ phân giải tối thiểu **480p**
+    * Video được quay trực diện sản phẩm, cách sản phẩm từ **5 -15cm**
+    * Tất cảc sản phẩm được đặt nằm ngang, hoặc đứng tuỳ thuộc hình dạng sản phẩm (ưu tiên đặt các sản phẩm nằm ngang)
+    * Video không có noises, ánh sáng tốt **(ISO camera > 100)**
+  * OUTPUT: 
+    * Video đầu vào với các thông tin được hiển thị trên video cụ thể như sau:
+      * Bbox bao quanh các sản phẩm được nhận diện đi kèm với tên sản phẩm+chỉ số biểu thị độ chính xác của sản phẩm nhận diện
+      * Tên sản phẩm, tổng số lượng, tổng giá sản phẩm được nhận diện.
+      * Bill thanh toán format file text, có tổng giá khách hàng phải thanh toán.
+<a name="cacnghiencuu"></a>
+# **2.Các Nghiên Cứu Về Bài Toán Của Tiền Nhân**
+## [Bài nghiên cứu về *"Phát hiện sản phẩm trên kệ"* của Joseph Nelson](https://blog.roboflow.com/retail-store-item-detection-using-yolov5/)
 
+* **Theo bài báo**
+
+* Bộ dữ liệu sử dụng: **SKU110k** images dataset, bao gồm **2940 ảnh trong tập test**, **8232 ảnh trong tập train** và **587 ảnh trong tập validation**
+* Model Training: YOLOv5
+* Performance: **mAP là 0.7** với **IoU là 0.5**
+
+## [Bài báo nghiêm cứu về *"Nhận diện sản phẩm"* của Yuchen Wei , Son Tran , Shuxiang Xu Byeong Kang and Matthew Springer](https://www.hindawi.com/journals/cin/2020/8875910/)
+
+* **Theo bài báo**
+
+Họ sử dụng nhiều bộ dữ liệu cùng với đó là công nghệ khác nhau trên từng bộ dữ liệu đem lại những hiệu quả khác nhau. Bộ dữ liệu từ nhiều nguồn, bao gồm **GroZi-120, GroZi-3.2k, Freiburg Grocery Dataset, Cigarette Dataset, Grocery Store Dataset, GP181 Dataset, D2S Dataset và RPC Dataset**. Với từng bộ dữ liệu, họ có sử dụng những phương thức tiếp cận khác nhau, như với **GroZi-3.2k cho mAP 73.93%, GP-20 cho mAP 65.55% và GP181 cho mAP 85.79%**
+* **Tổng kết của bài báo nghiên cứu**
+  * Thách thức:
+    * Phân loại bài toán với quy mô lớn
+    * Hạn chế về dữ liệu
+    * Biến thể nội thủy tinh (các sản phẩm có thủy tinh có sự phản xạ từ môi trường xung quanh)
+    * Tính linh hoạt
+  * Các kỹ thuật đã sử dụng trong nghiên cứu:
+    * Generating data with deep neural networks
+    * Graph neural networks with deep learning
+    * Cross-domain recognition with transfer learning
+    * Joint feature learning from text information on packaging
+    * Incremental learning with the CNN
+    * The regression-based object detection methods for retail product recognition
+* **Nhận xét từ các bài báo**: Bài báo có đề cập đến việc YOLO9000 đã cung cấp một phương pháp có thể phát hiện 9000 lớp đối tượng, nhưng không khả thi trong trường hợp phát hiện sản phẩm vì chi phí chú thích cao. Nhưng vì chúng em làm khoảng 200 lớp, và đã có ý định dùng "cơm" để gắn nhãn sản phẩm, nên đã sử dụng YOLOv4.
 ## Mô tả dữ liệu
 Dữ liệu được tụi em tự thu thập
 * **Tại sao cần tự thu thập dữ liệu:**
@@ -54,32 +101,3 @@ Dữ liệu được tụi em tự thu thập
   * Số lượng hình ảnh lớn, yêu cầu về đa dạng sản phẩm nên việc thu thập tốn rất nhiều thời gian (khoảng 2 tuần)
   * Siêu thị và bách hóa xanh không cho chụp hình sản phẩm của họ, nên chúng em sẽ phải mua sản phẩm về nhà để chụp
   * Vì việc chụp ảnh diễn ra cùng lúc nên nhiều khi chúng em chụp lại sản phẩm mà đã có thành viên chụp rồi, hoặc mua nhầm sản phẩm đã được chụp
-
-# Các nghiên cứu của tiền nhân
-
-## Bài nghiên cứu về phát hiện sản phẩm trên kệ của Joseph Nelson
-https://blog.roboflow.com/retail-store-item-detection-using-yolov5/
-
-* Theo bài báo, họ sử dụng bộ dữ liệu SKU110k image dataset, bao gồm 2940 ảnh trong tập test và 8232 ảnh trong tập train và  587 ảnh trong tập validation
-* Phương pháp sử dụng là YOLOv5
-* Với kết quả đem lại là mAP là 0.7 với IoU là 0.5
-
-## Bài báo nghiêm cứu về nhận diện sản phẩm của Yuchen Wei , Son Tran , Shuxiang Xu Byeong Kang and Matthew Springer 
-https://www.hindawi.com/journals/cin/2020/8875910/
-
-* **Theo bài báo**
-Họ sử dụng nhiều bộ dữ liệu cùng với đó là công nghệ khác nhau trên từng bộ dữ liệu đem lại những hiệu quả khác nhau. Bộ dữ liệu từ nhiều nguồn họ sử dụng bao gồm GroZi-120, GroZi-3.2k, Freiburg Grocery Dataset, Cigarette Dataset, Grocery Store Dataset, GP181 Dataset, D2S Dataset và RPC Dataset. Với từng bộ dữ liệu, họ có sử dụng những phương thức tiếp cận khác nhau, như với CNN, GroZi-3.2k cho mAP 73.93%, GP-20 cho mAP 65.55% và GP181 cho mAP 85.79%
-* **Tổng kết của bài báo nghiêm cứu**
-  * Thách thức:
-    * Phân loại bài toán với quy mô lớn
-    * Hạn chế về dữ liệu
-    * Biến thể nội thủy tinh
-    * Tính linh hoạt
-  * Các kỹ thuật đã sử dụng trong nghiên cứu:
-    * Generating data with deep neural networks
-    * Graph neural networks with deep learning
-    * Cross-domain recognition with transfer learning
-    * Joint feature learning from text information on packaging
-    * Incremental learning with the CNN
-    * The regression-based object detection methods for retail product recognition
-* **Nhận xét từ các bài báo**: Bài báo có đề cập đến việc YOLO9000 đã cung cấp một phương pháp có thể phát hiện 9000 lớp đối tượng, nhưng không khả thi trong trường hợp phát hiện sản phẩm vì chi phí chú thích cao. Nhưng vì chúng em làm khoảng 200 lớp, và đã có ý định dùng "cơm" để gắn nhãn sản phẩm, nên đã sử dụng YOLOv4.
