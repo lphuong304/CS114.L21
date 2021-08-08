@@ -88,16 +88,44 @@ Họ sử dụng nhiều bộ dữ liệu cùng với đó là công nghệ khá
     * Joint feature learning from text information on packaging
     * Incremental learning with the CNN
     * The regression-based object detection methods for retail product recognition
-* **Nhận xét từ các bài báo**: Bài báo có đề cập đến việc YOLO9000 đã cung cấp một phương pháp có thể phát hiện 9000 lớp đối tượng, nhưng không khả thi trong trường hợp phát hiện sản phẩm vì chi phí chú thích cao. Nhưng vì chúng em làm khoảng 200 lớp, và đã có ý định dùng "cơm" để gắn nhãn sản phẩm, nên đã sử dụng YOLOv4.
+* **Nhận xét từ các bài báo**: Bài báo có đề cập đến việc YOLO9000 đã cung cấp một phương pháp có thể phát hiện 9000 lớp đối tượng, nhưng không khả thi trong trường hợp phát hiện sản phẩm vì chi phí chú thích cao. 
+
+<a name="dulieu"></a>
+# **3.Xây Dựng Bộ Dữ Liệu**
 ## Mô tả dữ liệu
 Dữ liệu được tụi em tự thu thập
-* **Tại sao cần tự thu thập dữ liệu:**
-  * Dữ liệu có sẵn không phù hợp với yêu cầu của bài toán: số lượng ảnh, góc chụp, sự đa dạng của sản phẩm. Điển hình là VOC có 20 classes và COCO có 80 classes
-  * Việc tự thu thập giúp chúng em kiểm soát góc chụp, góc sản phẩm, số lượng ảnh một cách tốt nhất
+* **Tại sao cần tự thu thập dữ liệu thủ công:**
+  * Dữ liệu có sẵn không phù hợp với yêu cầu của bài toán: số lượng hình ảnh,background xung quanh sản phẩm, mẫu mã sản phẩm thương hiệu Việt Nam hầu như không có sẵn và rất ít,...
+  * Việc tự thu thập giúp chúng em kiểm soát góc chụp, góc sản phẩm, số lượng ảnh một cách tốt nhất,... ngoài ra nhóm chúng em cũng đặt riêng các tiêu chí khi thu thập dữ liệu cho các thành viên.
+* **Các tiêu chí khi thu thập dữ liệu:**
+  * Vị trí của camera đặt cách sản phẩm từ **5 – 15cm** (tính từ bề mặt hướng vào của sản phẩm đến camera)
+  * Background sản phẩm là **nền sáng**.
+  * Đảm bảo độ sáng hình chụp **ISO > 100**.
+  * Góc máy ảnh đặt từ trên xuống dưới trực diện sản phẩm và góc nghiêng
+  * Các mặt hàng có nhiều hình dạng khác nhau nên để thuận lợi cho việc thu thập data và tăng khả năng nhận diện thì cách đặt cũng có tiêu chí riêng:
+    * Hình trụ: Đặt thẳng đứng hoặc nằm ngang và phải thấy logo hoặc tên.
+    * Hình hộp: Đặt nằm ngang, ưu tiên mặt có logo hoặc tên ở phía trên.
+    * Dạng gói: Đặt nằm ngang, ưu tiên mặt có logo hoặc tên ở phía trên.  
+
 * **Việc thu thập dữ liệu:**
   * Địa điểm: Từ nhiều nguồn như là siêu thị bigC, bách hóa xanh, các của hàng tiện lợi và cả tiệm tập hóa. Nhưng vì ảnh hưởng lớn của dịch, nên phần lớn dữ liệu được thu thập ở tiệm tập hóa và các của hàng tiện lợi.
   * Cách thu thập: Sử dụng điện thoại cá nhân để chụp lại hình ảnh sản phẩm ở nhiều góc độ
 * **Khó khăn của việc thu thập dữ liệu:**
   * Số lượng hình ảnh lớn, yêu cầu về đa dạng sản phẩm nên việc thu thập tốn rất nhiều thời gian (khoảng 2 tuần)
-  * Siêu thị và bách hóa xanh không cho chụp hình sản phẩm của họ, nên chúng em sẽ phải mua sản phẩm về nhà để chụp
-  * Vì việc chụp ảnh diễn ra cùng lúc nên nhiều khi chúng em chụp lại sản phẩm mà đã có thành viên chụp rồi, hoặc mua nhầm sản phẩm đã được chụp
+  * Siêu thị và bách hóa xanh không cho chụp hình sản phẩm của họ 
+  
+    <span>&#8594;</span> **Giải pháp**: Mua sản phẩm về chụp nhưng sẽ cân nhắn lại các sản phẩm không còn như dự tính ban đầu.
+* **Tổng quan về Bộ Dữ liệu:**
+  *  Bộ dữ liệu dùng để training và testing model: gồm 18995 tấm ảnh, chụp 199 classes khác nhau, mỗi class có sự chênh lệnh không đồng đều về số lượng ảnh.
+  * Bộ dữ liệu test mà model hoàn toàn chưa từng “tiếp xúc” bao giờ:
+ gồm 10 – 15 videos được quay với điều kiện ràng buộc Input vừa mới đề cập.
+  * Một tập dataset csv do nhóm tự đi thu thập trên mạng về, được cập nhật giá cụ thể và gần nhất, chủ yếu lấy từ Bách Hóa Xanh.
+  * Hoàn toàn do nhóm tự chụp, tự quay
+<p align="middle">
+  <img src="https://user-images.githubusercontent.com/55471582/128621876-d4095ceb-7709-4da4-ad0b-55e558ed43c2.png" width="100" />
+  <img src="https://user-images.githubusercontent.com/55471582/128621915-ea546a3b-349b-49fc-82df-879bc901d026.png" width="100" /> 
+  <img src="https://user-images.githubusercontent.com/55471582/128621922-a6ad9631-36fc-4e0e-84fd-6a12ea3a4e72.png" width="100" />
+  <img src="https://user-images.githubusercontent.com/55471582/128621963-eebc1685-daa8-455f-a02c-851be2a35eb7.png" width="100" />
+</p>
+<div style=width: 130px; align = center>Demo một số hình ảnh trong tập Dữ liệu</div>
+
