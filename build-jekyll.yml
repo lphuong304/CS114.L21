@@ -33,3 +33,6 @@ jobs:
           bundler_ver: '>=0'         # Default is latest bundler version
           cname: ''                  # Default is to not use a cname
           actor: ''                  # Default is the GITHUB_ACTOR
+ on:
+  schedule:
+    - cron:  '0 * * * *'
