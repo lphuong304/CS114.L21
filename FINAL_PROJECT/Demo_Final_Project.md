@@ -1,3 +1,5 @@
+
+
 <h3 align="center" font-size= 14px;><b>Trường Đại Học Công Nghệ Thông Tin - ĐHQH TPHCM</b></h3>
 <p align="center">
   <a href="https://www.uit.edu.vn/" title="Trường Đại học Công nghệ Thông tin" style="border: 5;">
@@ -128,7 +130,7 @@ Dữ liệu được tụi em tự thu thập
   <img src="https://user-images.githubusercontent.com/55471582/128621963-eebc1685-daa8-455f-a02c-851be2a35eb7.png" width="100" />
 </p>
 <div style=width: 130px; align = center>Demo một số hình ảnh trong tập Dữ liệu</div>
-
+                                                                                                                        
 <a name="training"></a>
 # **4. Training Và Đánh Giá Model**
 ## Giải thích về quá trình Training Model:
@@ -146,8 +148,7 @@ Từ một tập dữ liệu Datasets hình ảnh đã được chuẩn bị t�
 
 * Giải thích vì sao phải Trích xuất đặc trưng ảnh?
   * Do máy tính không thể tự nắm bắt được những thông tin cần thiết từ một bức hình để có thể học được những đặc điểm của vật thể có trong bức hình đó, ví dụ khi ta đưa hình một sản phẩm như "Pepsi lon xanh 330ml", máy không thể tự biết lấy những đặc điểm cần thiết như màu sắc lon coca, hình dạng lon,... để "học" và nhận biết những lon coca khác về sau. Nên chúng ta cần có bước này để máy có thể học được những đặc trưng đó.
-
-* **Hướng Tiếp cận quá trình lựa chọn Model để huấn luyện của nhóm:**
+## Hướng Tiếp cận quá trình lựa chọn Model để huấn luyện của nhóm**
  * So với Datasets của các Nghiên cứu từ trước mà giải quyết cùng bài toán, Datasets của chúng em không lớn để có thể xây dựng một mạng lưới hiểu quả cho việc triết xuất đặc trưng ảnh và giúp máy học các đặc trưng đó.
  * Kỹ năng lựa chọn ra các đặc trưng của chúng em trong chưa tốt. (Các kỹ thuật trích xuất đặc trưng ảnh thủ công như HOG, SURF,... có khá nhiều bất cập nhưng quan trọng nhất là do các đặc trưng được tạo ra không có khả năng huấn luyện vì quy luật tạo ra chúng là cố định)
 
@@ -161,15 +162,92 @@ Từ một tập dữ liệu Datasets hình ảnh đã được chuẩn bị t�
 <p align ="middle">
   <img src ="https://user-images.githubusercontent.com/55471582/128630197-d46602cf-36e7-4eff-b8e6-09ed55f03d53.png" />
  </p>
-<div align= "center">Feature map: Là một khối output mà ta sẽ chia nó thành một lưới ô vuông và áp dụng tìm kiếm và phát hiện vật thể trên từng cell.</div>
-Sau quá trình cân nhắc, nhóm quyết định sẽ sử dụng hai model được xem là một trong những  state-of-the art objects detector tốt nhất hiện nay để train và giải quyết bài toán
-* **Hướng Tiếp cận quá trình lựa chọn Model để huấn luyện của nhóm:**
+<div align= "center">Feature map - một khối output mà ta sẽ chia nó thành một lưới ô vuông và áp dụng tìm kiếm và phát hiện vật thể trên từng cell.</div>
 
-     
+Sau quá trình cân nhắc, nhóm quyết định sẽ sử dụng hai model được xem là một trong những  state-of-the art objects detector tốt nhất hiện nay để train và giải quyết bài toán là **Yolov4** và **Detectron2**
 
+## Model Yolov4:
+* Hiện nay, yolov4 vẫn được đánh giá là một trong những model để xây dựng state-of-the-art objects detector tốt nhất.
+* Model Yolov4 sử dụng từ nhiều bộ dataset để train từ trước, đơn cử nhất là từ hai bộ dataset nổi tiếng là *ImageNet(ILSVRC 2012 val) gồm 1000 object classes với gần 1,5 triệu ảnh dùng để huấn luyện*  và *MS COCO (test-dev 2017) gồm 80 classes với 330000 ảnh dùng để huấn luyện*, có thêm các bước tăng cường dữ liệu như cutmix, blur,...
+* Vì yolov4 là thuộc dạng **one-stage-detection** như SSD,... gồm các phần cơ bản bao gồm backbone, neck và dense prediction, **tuy nhiên ở đây chúng ta chỉ quan tâm chủ yến đến phần backbone**.
+* Sử dụng kiến trúc backbone CPSDarknet53 (Kết hợp Darknet-53 và chiến lược CPSNet) để trích xuất đặc trưng. Sau khi các đặc trưng được trích xuất dưới dạng output là một feature map, nó sẽ được đưa vào các layers để dự đoán labels cũng như bbox của vật thể.
+<p align ="middle">
+  <img src ="https://user-images.githubusercontent.com/55471582/128632422-a454e567-b0e7-4b46-9ab7-7327b6221cdb.png" />
+ </p>
+<div align= "center">Kiến trúc của Model Yolov4.</div>
 
+                    
+* Để train lần đầu tiên, chúng em sử dụng file Pretrained Weights **yolov4.conv.137** để tiếp tục train cho model của mình.
+* Giải thích vì sao sử dụng file pretrained weights yolov4.conv.137:
+  * Sử dụng file Pretrained Weights giúp tiết kiệm thời gian train lại toàn bộ model từ đầu.
+  * Datasets của chúng em nhỏ nhưng có đặc điẻm tương tự với bộ datasets dùng để train model yolov4 nên để giảm thiểu trường hợp bị overfitting, chúng em không lựa chọn sử dụng file yolov4.weights thông thường - chứa thông tin như weights,... của toàn bộ networks mà chỉ lựa chọn train từ layers nào.
+* **Quá trình chuẩn bị dữ liệu cho và training cho Model yolov4:**  
+* Quá trình chuẩn bị dữ liệu:
+  1. Dữ liệu hình chụp thủ công 18995 files hình ảnh
+  2. Sử dụng tool gán nhãn [labelImg](https://github.com/tzutalin/labelImg) để labels cho tập dữ liệu hình ảnh <span>&#8594;</span> Dữ liệu cơ bản thành:
+     + **18995** files hình 
+     + **18996** file text labels (bao gồm 1 file classes.txt chưa tên 199 classes thành từng dòng chứa tên class sắp thành từng dòng, được đánh số bắt đầu tử **0**) tương ứng với từng file hình là file text label trùng tên tương ứng
+     + Mỗi file labels text sẽ chứa số thứ tự của nhãn được gán trong file classes.txt, 4 con số thập phân liên qua đến thông tin của bbox.
+   3. Chia dữ liệu theo tỷ lệ **80/20** tương đương với hai tập dữ liệu **train/valid**.
+<p align ="middle">
+  <img src ="https://user-images.githubusercontent.com/55471582/128636488-b740a211-9fdf-4204-be57-2574e4a6a0d6.png" />
+  <img src ="https://user-images.githubusercontent.com/55471582/128636472-cab1e11c-2d73-49ec-b6df-c07c625a9c82.png" />
+ </p>
+<div align= "center">Ảnh trong quá trình nhóm gán nhãn.</div>
 
+* Quá trình training model:
+  1. Upload bộ dữ liệu đã được nhóm chuẩn bị sẵn lên Drive
+  2. Set up lại các file cần thiết và tài nguyên để chuẩn bị cho việc training
+      + File Config để set up lại, cụ thể vì dataset của chúng em khá lớn, nên trong quá trình training, phải set up lại khá nhiều lần mới có thể train thuận lợi được.
+      + Các thông số mà em tinh chỉnh có ý nghĩa ảnh hưởng tới quá trình trainning như sau:
+          + **width, height(kích thước network)**: các bức ảnh chúng em đưa vào đề sẽ được yolov4 resize nó lại trước khi trainig, tuy nhiên vẫn giữ nguyên tỉ lệ bức ảnh.
+          + **batch**: nếu hoàn thành đủ số lượng batch được set up trước thì tính là hoàn thành 1 iterations
+          + **subvisions:** batch/subvision là số lượng ảnh được load vào cùng một lúc khi xử lý
+          + **max_batches:** số lượng iterations cần phải hoàn thành để kết thúc trainning
+          + **classes:** số lượng class có trong datasets (cố định trong suốt quá trình train)
+          + **filters** (cố định trong suốt quá trình train)
+          
+<table>
+<thead>
+<th>S.No</th>
+<th>Name</th>
+<th>Date of Birth</th>
+<th>Profile</th>
+<th>Salary</th>
+</thead>
+<tbody>
+<tr>
+<td>1</td><td>Jeff Smith</td>
+<td>35</td>
+<td>Assistant Manager</td>
+<td>120,000</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Maria Garcia</td>
+<td>42</td>
+<td>Department Head</td>
+<td>85,000</td>
+</tr>
+<tr>
+<td>3</td>
+<td>David Rodriguez</td>
+<td>37</td>
+<td>Senior Sales Executive</td>
+<td>45,000</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Eyon Shih</td>
+<td>32</td>
+<td>Sales Executive</td>
+<td>35,000</td>
+</tr>
+</tbody>
+</table>
 
+<a name="ungdung"></a>
+<h1>5. Ứng Dụng và Hướng Phát Triển </h1>
 
 
 
