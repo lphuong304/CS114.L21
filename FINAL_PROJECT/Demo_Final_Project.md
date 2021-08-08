@@ -33,11 +33,12 @@
 * **Tại sao lại là MÔ HÌNH SIÊU THỊ KHÔNG THU NGÂN? Lợi ích so với mô hình truyền thống?**
 
     Sản phẩm đồ án của chúng em sẽ mang đến những lợi ích như sau:
-    + Giúp đẩy nhanh quy trình thanh thoán tại các cửa hàng, hạn chế việc chờ đợi xếp hàng.
-    + Ngành công nghiệp bán lẻ ngành càng được đẩy mạnh, thì việc tự động quá khâu thanh toán giúp cắt giảm chi phí nhân lực, giảm các trường hợp dịch vụ không được đánh giá cao do thái độ nhân viên.
+    + Giúp đẩy nhanh quy trình thanh toán tại các cửa hàng, hạn chế việc chờ đợi xếp hàng.
+    + Ngành công nghiệp bán lẻ ngày càng được đẩy mạnh, thì việc tự động quá khâu thanh toán giúp cắt giảm chi phí nhân lực, giảm các trường hợp dịch vụ không được đánh giá cao do thái độ nhân viên.
     + Tối ưu hóa trải nghiệm người dùng ở quá trình thanh toán.
     + Đáng tin cậy hơn so với hình thức thanh toán thủ công
     + Theo trang Digimarc<!-- https://www.digimarc.com/about/news-events/press-releases/2015/07/21/digimarc-survey-88-percent-of-u.s.-adults-want-their-retail-checkout-experience-to-be-faster -->, 45% khách hàng phàn nàn rằng đôi khi sử dụng mã vạch không tiện lợi
+    + 
 * **INPUT**: Video thời lượng tối đa 1 phút các sản phẩm thương mại, góc quay từ trên xuống, mặt hàng đặt nằm ngửa, quay trực diện sản phẩm, ánh sáng tốt (xét điều kiện ánh sáng siêu thị), mỗi mặt hàng có nhiều mặt (trước, sau), video không nhiễu, chất lượng video tối thiểu là 480p trở lên.
 * **OUTPUT**: Tên sản phẩm thương mại + Số lượng + Gía tiền sản phẩm => Tổng tiền (Hình thức một hóa đơn)
 
@@ -67,7 +68,6 @@ https://blog.roboflow.com/retail-store-item-detection-using-yolov5/
 https://www.hindawi.com/journals/cin/2020/8875910/
 
 * **Theo bài báo**
-
 Họ sử dụng nhiều bộ dữ liệu cùng với đó là công nghệ khác nhau trên từng bộ dữ liệu đem lại những hiệu quả khác nhau. Bộ dữ liệu từ nhiều nguồn họ sử dụng bao gồm GroZi-120, GroZi-3.2k, Freiburg Grocery Dataset, Cigarette Dataset, Grocery Store Dataset, GP181 Dataset, D2S Dataset và RPC Dataset. Với từng bộ dữ liệu, họ có sử dụng những phương thức tiếp cận khác nhau, như với CNN, GroZi-3.2k cho mAP 73.93%, GP-20 cho mAP 65.55% và GP181 cho mAP 85.79%
 * **Tổng kết của bài báo nghiêm cứu**
   * Thách thức:
