@@ -137,3 +137,39 @@ Dữ liệu được tụi em tự thu thập
   <img src = "https://user-images.githubusercontent.com/55471582/128622657-efe4d909-718a-4173-be7f-3efea3958b29.png" />
 </p>
 * Sau khi tìm hiểu, chúng em rút kế được cho mình kiến thức về quá trình training như sau:
+Từ một tập dữ liệu Datasets hình ảnh đã được chuẩn bị từ trước
+<div align="center">Từ một tập dữ liệu Datasets hình ảnh đã được chuẩn bị từ trước.</div>
+<div align="center"><span>&#8595;</span></div>
+<div align="center">Tiền xử lý dữ liệu Input trước khi đưa vào training, thực hiện Trích Xuất đặc Trưng ảnh.</div>
+<div align="center"><span>&#8595;</span></div>
+<div align="center">Tiến hành áp dụng các thuật toán cần thiết để máy học được những đặc trưng đó, nhằm phát hiện vật thể dựa trên Feature map.</div>
+
+* Giải thích vì sao phải Trích xuất đặc trưng ảnh?
+  * Do máy tính không thể tự nắm bắt được những thông tin cần thiết từ một bức hình để có thể học được những đặc điểm của vật thể có trong bức hình đó, ví dụ khi ta đưa hình một sản phẩm như "Pepsi lon xanh 330ml", máy không thể tự biết lấy những đặc điểm cần thiết như màu sắc lon coca, hình dạng lon,... để "học" và nhận biết những lon coca khác về sau. Nên chúng ta cần có bước này để máy có thể học được những đặc trưng đó.
+
+* **Hướng Tiếp cận quá trình lựa chọn Model để huấn luyện của nhóm:**
+ * So với Datasets của các Nghiên cứu từ trước mà giải quyết cùng bài toán, Datasets của chúng em không lớn để có thể xây dựng một mạng lưới hiểu quả cho việc triết xuất đặc trưng ảnh và giúp máy học các đặc trưng đó.
+ * Kỹ năng lựa chọn ra các đặc trưng của chúng em trong chưa tốt. (Các kỹ thuật trích xuất đặc trưng ảnh thủ công như HOG, SURF,... có khá nhiều bất cập nhưng quan trọng nhất là do các đặc trưng được tạo ra không có khả năng huấn luyện vì quy luật tạo ra chúng là cố định)
+
+  <span>&#8594;</span> **Giải pháp**: Áp dụng Kỹ thuật Transfer Learning (Tận dụng những kinh nghiệm kiến thức đã học được từ vấn đề này để giải quyết một vấn đề khác có liên quan), ở đây chúng em sẽ tận dụng nguồn tài nguyên dồi dào về các bài toán Objects Detection để áp dụng vào bài toán của nhóm em. 
+  
+  <span>&#8594;</span>Sử dụng mô hình **CNN(convolutional neutral network)** điển hình như Darknet, VGG – 16,.... Resnet,...để triết xuất đặc trưng thông qua các tầng layers.
+  
+  * *Đặc điểm của mô hình CNN hoàn toàn phù hợp với yêu cầu giải quyết bài toán của chúng em:* *
+    * Kiến trúc phân tầng, học đặc trưng từ các cấp độ khác nhau, mức độ chi tiết đặc điểm của object cần detect trong hình ảnh cũng tăng lên thông qua các Feature Map (ví dụ như màu lon nước, đặc điểm logo,...) đến layer cuối cùng sẽ thu về được một lon nước hoàn chỉnh.
+    * Đã được huấn luyện trên một datasets lớn từ trước, giải quyết được vấn đề datasets nhỏ của chúng em, tức là nó đã được học cách tự điều chỉnh những features mà nó cần trích xuất để phù hợp với tasks tương ứng.
+<p align ="middle">
+  <img src ="https://user-images.githubusercontent.com/55471582/128630197-d46602cf-36e7-4eff-b8e6-09ed55f03d53.png" />
+ </p>
+<div align= "center">Feature map: Là một khối output mà ta sẽ chia nó thành một lưới ô vuông và áp dụng tìm kiếm và phát hiện vật thể trên từng cell.</div>
+Sau quá trình cân nhắc, nhóm quyết định sẽ sử dụng hai model được xem là một trong những  state-of-the art objects detector tốt nhất hiện nay để train và giải quyết bài toán
+* **Hướng Tiếp cận quá trình lựa chọn Model để huấn luyện của nhóm:**
+
+     
+
+
+
+
+
+
+
