@@ -561,8 +561,8 @@ Bouding Box các vật thể như khi xác định localization của vật th�
 [3] https://viblo.asia/p/tim-hieu-ve-convolutional-neural-network-va-lam-mot-vi-du-nho-ve-phan-loai-anh-aWj53WXo56m
 
 * Tìm hiểu về mAP
-[1]
 
-[2]
+[1] https://devai.info/2021/02/24/series-yolo-4-tim-hieu-cau-truc-yolov1v2v3-va-v4-phan-2/
 
-[3]
+[2] https://towardsdatascience.com/map-mean-average-precision-might-confuse-you-5956f1bfa9e2
+
