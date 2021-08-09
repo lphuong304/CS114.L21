@@ -228,6 +228,28 @@ Sau quá trình cân nhắc, nhóm quyết định sẽ sử dụng hai model đ
 <span>&#8594;</span> Model training khi train đến iteration từ 46000 trở đi không có dấu hiệu giảm nên chúng em quyết định dừng train và dùng các file weights đã train được đem đi test model
 
 * **Đánh giá Model yolov4:**  
+  * Model Yolov4 sẽ được đánh giá dựa trên hai thông số sai: **avg_loss** và **mAP**, nhưng ở đây. để tập trung vào phần so sánh với model Faster R - CNN ở phần sau, nhóm sẽ chỉ tập trung vào chỉ số **mAP** cũng như **AP, AP50, AP75** - các thước đo phỏ biết nhất hiện nay để đánh giá một model objects detection.
+<p align ="middle">
+  <img src="https://user-images.githubusercontent.com/55471582/128653722-47833fa5-b22c-4bd1-a4b6-42287367f4ed.png" />
+</p>
+<div align = "center">Đánh giá Model Yolov4 trong bài toán Object Detection sử dụng backbone CPSDarknet53</div>
+
+  * Để biết vì sao chúng em sử dụng mAP để đánh giá model Yolov4, chúng em xin trình bài các khái niệm liên quan có ý nghĩa quan trọng như sau:
+    * **IoU**: độ do overlap giữa các bbox, cụ thể là giữa *grounth truth bounding box - bao quanh chính xác bbox của vật thể - là bbox mà chúng em đã lable* với *bounding box mà mô hình dự đoán*.
+    * **AP**: là chỉ số có quan hệ mật thiết với chỉ số *precision(phần trăm các bbox được dự đoán là đúng)* và *recall (tỉ lệ phần trăm các bbox được dự đoán đều chính xác)*
+<p align ="middle">
+  <img src="https://user-images.githubusercontent.com/55471582/128654429-26907296-9b3c-4c68-8600-cc44bf76f59c.png" />
+</p>
+<div align = "center">Minh họa cách tính các chỉ số như precision, tecal, IoU</div>
+
+<p align ="middle">
+  <img src ="https://user-images.githubusercontent.com/55471582/128654434-7d2f0aa2-eb6f-4a43-8868-f0f3570b6181.png" />
+</p>
+<div align = "center">Sơ đồ trực quan cách tính AP dựa vào chỉ số precision và recall</div>
+
+
+    
+    <span>&#8594;</span> 
 <a name="ungdung"></a>
 <h1>5. Ứng Dụng và Hướng Phát Triển </h1>
 
