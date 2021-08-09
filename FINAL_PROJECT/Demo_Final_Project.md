@@ -31,8 +31,7 @@
 3. [Xây Dựng Bộ Dữ Liệu](#dulieu)
 4. [Training Và Đánh Giá Model](#training)
 5. [Hướng Phát Triển Ứng Dụng Và Cải Tiến](#ungdung)
-6. [Phân Công Công Việc](#phancong)
-7. [Nguồn Tham Khảo](#thamkhao)
+6. [Nguồn Tham Khảo](#thamkhao)
 
 <a name="tongquan"></a>
 # **1. Tổng Quan Về Đồ Án**
