@@ -270,11 +270,13 @@ Sau quá trình cân nhắc, nhóm quyết định sẽ sử dụng hai model đ
     * Thuật toán phải them dõi đối tượng và gán có định một trạc-id suốt video.
     
     <span>&#8594;</span> Xác định yêu cầu: Nhận diện đúng các sản phẩm, số lượng vật thể sẽ được lưu vào và sẽ được cộng dồn khi phát hiện vật thể cùng khác cùng sản phẩm.
+    
   2. Tham khảo source code từ repository [yolov4-deepsort](https://github.com/theAIGuysCode/yolov4-deepsort)
   3. Chỉnh sửa, thêm function và flag `--count` để đếm sản phẩm, lưu lại và cộng dồn vào trong suốt quá trình detect video, thêm function convert files giá excel sang format dict, tính tổng giá, xuất bill,...
   4. Download file weights sau khi train để đem về máy local detect. Sử dụng files weights vừa mới tải về để save thành model sử dụng để detect video. Nếu sử dụng file weights mới, thì phải có bước này. Chạy file code save_model.py, gọi flag `--model` và lưu thành tên model muốn lưu - ví dụ command bên dưới lưu thành model tên `yolov4`
   ```python save_model.py --model yolov4``
-  6. Ví dụ khi tiến hành detect video test3.mp4 nằm trong folder `./data/video`, ta làm như sau 
+  5. Ví dụ khi tiến hành detect video test3.mp4 nằm trong folder `./data/video`, ta chạy command line như sau:
+  `
 <a name="ungdung"></a>
 <h1>5. Ứng Dụng và Hướng Phát Triển </h1>
 
