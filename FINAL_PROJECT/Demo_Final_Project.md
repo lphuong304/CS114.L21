@@ -130,7 +130,96 @@ Dữ liệu được tụi em tự thu thập
   <img src="https://user-images.githubusercontent.com/55471582/128621963-eebc1685-daa8-455f-a02c-851be2a35eb7.png" width="100" />
 </p>
 <div style=width: 130px; align = center>Demo một số hình ảnh trong tập Dữ liệu</div>
-                                                                                                                        
+
+<h3> Nhận xét: </h3>
+<ol> 
+  <li> Data nhóm hoàn toàn do thủ công tự chụp, thành viên trong nhóm đã thống nhất với nhau từ trước sẽ tạo nên một bộ dữ liệu “sạch” (clean data). </li>
+  <ul> => Nhóm chúng em không có bước tiền xử lý dữ liệu. </ul>
+  
+  <li> Data nhóm có kích thước khá lớn (17.3GB), và do trong quá trình chuẩn bị dữ liệu, đường truyền mùa dịch không ổn định và quá trình train hay bị tràn, crash trên colab.</li>
+  <ul> => Nhóm chúng em quyết định không có bước tăng cường dữ liệu, chấp nhận việc model có thể bị overfitting – sẽ demo sau, nhưng chúng em vẫn đảm bảo model sẽ detect tốt trong các video test được quay với điều kiệu đã ràng buộc từ trước. </ul>
+</ol>
+
+
+<h2> 3. Mô tả thông số bộ dữ liệu </h2>
+<div align="middle"> <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/ThongSo01.png" /> </div>
+<div align="middle"> <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/ThongSo02.png" /> </div>
+<div align="middle"> <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/ThongSo03.png" /> </div>
+<h3> Nhận xét thông số: </h3>
+<ul>
+  <li> Bộ dữ liệu có sự chênh lệch lớn về giữa các class, dự đoán mô hình training sẽ khó xử lý trên nhưng bởi lí do đã nêu trên, nhóm chúng em quyết định sẽ không tiền xử lý dữ liệu. => <strong>unbalanced data</strong> </li>
+  
+  <li> Nếu đem model training từ tập dữ liệu trên nhưng không có tiền xử lý dữ liệu thì độ chính xác khi áp dụng vào thực tế có thể sẽ thấp hơn => <strong>dự đoán model bị overfitting</strong> </li>
+</ul>
+
+<h3> Bộ dữ liệu cho mỗi model </h3>
+<p> Hai tập dữ liệu dùng để train hai model đều có kích thước 17.3GB, tập dữ liệu sẽ bao gồm files ảnh chụp định dạng *.jpg các sản phẩm và files label (gán nhãn cho từng ảnh). </p>
+
+<table border="1" style="width:100%;">
+  <tr>
+    <th> YOLO </th>
+    <th> DETECRON2 </th>
+  </tr>
+  
+  <tr>
+    <td align="middle" style="width:50%;"> Định dạng files annotaions dưới dạng <strong>*.txt</strong> <br> (Tương ứng với một files ảnh sẽ có files labels trùng tên tương đương) </td>
+    <td align="middle"> Định dạng files annotations dưới dạng <strong>*.json</strong>. </td>
+  </tr>
+  
+  <tr>
+    <td align="middle" colspan="2"> Bộ dữ liệu dùng để train model yolov4 được chia theo tỉ lệ <strong>80/20</strong> tương đương <strong>train/valid</strong>. </td>
+  </tr>
+</table>
+
+
+<h3> Một số trường hợp khó xử lý: </h3>
+<ul>
+  <li> <strong>Khoảng các giữa các sản phẩm nhỏ hơn nhiều so với khoảng cách từ sản phẩm tới biên màn hình:</strong> </li>
+  <div align="middle">
+    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/NhieuSp01.png" width="200" height="200" />
+    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/NhieuSp02.png" width="200" height="200" />
+  </div>
+  <ul> => Giải pháp: trong một khung hình chỉ nên xuất hiện một sản phẩm. </ul>
+
+  <li> <strong>Các sản phẩm có đặc điểm cùng màu sắc, cùng hình dáng:</strong> </li>
+  <div align="middle"">
+    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/HopDo01.jpg" width="200" height="200" />
+    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/HopDo02.jpg" width="200" height="200" />
+  </div>
+  <div align="middle">
+    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/HopTron01.jpg" width="200" height="200" />
+    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/HopTron02.jpg" width="200" height="200" />
+  </div>
+  <div align="middle">
+    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/HopVang01.jpg" width="200" height="200" />
+    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/HopVang02.jpg" width="200" height="200" />
+  </div>
+  <div align="middle">
+    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/LonXanh01.jpg" width="200" height="200" />
+    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/LonXanh02.jpg" width="200" height="200" />
+  </div>
+
+  <li> <strong>Các sản phẩm có cùng hình dáng khác tông màu:</strong> </li>
+  <div align="middle">
+    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/Tru01.jpg" width="200" height="200" />
+    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/Tru02.jpg" width="200" height="200" />
+  </div>
+  <div align="middle">
+    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/HopTron01.jpg" width="200" height="200" />
+    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/HopTron02.jpg" width="200" height="200" />
+  </div>
+                                                                                                                                   
+  <li> <strong>Các sản phẩm có tông màu khác hình dạng:</strong> </li>
+  <div align="middle">
+    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/Do01.jpg" width="200" height="200" />
+    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/Do02.jpg" width="200" height="200" />
+  </div>
+  <div align="middle">
+    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/Xanh01.jpg" width="200" height="200" />
+    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/Xanh02.jpg" width="200" height="200" />
+  </div>
+</ul>
+
 <a name="training"></a>
 # **4. Training Và Đánh Giá Model**
 ## Giải thích về quá trình Training Model:
@@ -272,13 +361,165 @@ Sau quá trình cân nhắc, nhóm quyết định sẽ sử dụng hai model đ
     <span>&#8594;</span> Xác định yêu cầu: Nhận diện đúng các sản phẩm, số lượng vật thể sẽ được lưu vào và sẽ được cộng dồn khi phát hiện vật thể cùng khác cùng sản phẩm.
     
   2. Tham khảo source code từ repository [yolov4-deepsort](https://github.com/theAIGuysCode/yolov4-deepsort)
-  3. Chỉnh sửa, thêm function và flag `--count` để đếm sản phẩm, lưu lại và cộng dồn vào trong suốt quá trình detect video, thêm function convert files giá excel sang format dict, tính tổng giá, xuất bill,...
-  4. Download file weights sau khi train để đem về máy local detect. Sử dụng files weights vừa mới tải về để save thành model sử dụng để detect video. Nếu sử dụng file weights mới, thì phải có bước này. Chạy file code save_model.py, gọi flag `--model` và lưu thành tên model muốn lưu - ví dụ command bên dưới lưu thành model tên `yolov4`
+  3. Chỉnh sửa, thêm function:
+      *   function và flag `--count` để đếm sản phẩm, lưu lại và cộng dồn vào trong suốt quá trình detect video, tính tổng giá: [line 271 - 290](https://github.com/lphuong304/CS114.L21/blob/f04739b149bccfda901220e77cc67d21a8751a9f/FINAL_PROJECT/deepsort_to_detect/object_tracker.py#L271)
+      *   thêm function convert files giá excel sang format dict: [line 98 - 115](https://github.com/lphuong304/CS114.L21/blob/f04739b149bccfda901220e77cc67d21a8751a9f/FINAL_PROJECT/deepsort_to_detect/object_tracker.py#L98)
+      *   xuất bill: [line 268 - 271](https://github.com/lphuong304/CS114.L21/blob/f04739b149bccfda901220e77cc67d21a8751a9f/FINAL_PROJECT/deepsort_to_detect/object_tracker.py#L268)
+  5. Download file weights sau khi train để đem về máy local detect. Sử dụng files weights vừa mới tải về để save thành model sử dụng để detect video. Nếu sử dụng file weights mới, thì phải có bước này. Chạy file code save_model.py, gọi flag `--model` và lưu thành tên model muốn lưu - ví dụ command bên dưới lưu thành model tên `yolov4`
   ```python save_model.py --model yolov4``
-  5. Ví dụ khi tiến hành detect video test3.mp4 nằm trong folder `./data/video`, ta chạy command line như sau:
-  `
+  5. Ví dụ khi tiến hành detect video test3.mp4 để và lưu kết quả detect thành video demo8.avi nằm trong folder `./data/video`, ta chạy command line như sau:
+  `python object_tracker.py --video ./data/video/test12.mp4 --output ./outputs/demo8.avi --model yolov4 --count`
+  
+* **Model detect trên các mẫu dữ liệu test:**
+  * *Trường hợp mẫu dữ liệu mà model phần tích sai:*
+  * *Trường hợp mẫu dữ liệu mà model phần tích đúng:*
+* **Phân tích các Mẫu dữ liệu Video được detect:**
+  * *Trường hợp mẫu dữ liệu mà model phần tích sai:*
+    * Nguyên nhân:
+      + Camera đặt cách xa sản phẩm hơn điều kiện ràng buộc quy định trước đó (trong khoảng từ 5 – 20cm)
+      + Các sản phẩm như bơ thực vật Meizan, bơ Marrgarin có màu sắc và hình dạng kết cấu sản phẩm khá giống nhau nên dẫn đến model detect nhầm lẫn. Ngoài ra các sản phẩm như có kết cấu hình dạng giống nhau như sốt mayonnaise chai 260g
+      + Do hình ảnh dữ liệu trong tập không cân bằng nhau nên model có xu hướng detect ra những class có số lượng hình ảnh nhiều hơn và nhận biết tốt hơn, dẫn đến sự nhầm lẫn như trên.
+      
+<span>&#8594;</span>Model bị **overfitting.**
+   * *Trường hợp mẫu dữ liệu mà model phần tích đúng:*
+     * Nguyên nhân:
+      + Video có các tiêu chí điều kiện mà nhóm đã thống nhất sẽ chụp gom dữ liệu từ trước đó
+      + Các sản phẩm trong clip là những sản phẩm có màu sắc khá nổi trội và hình dạng đặc trưng, không giống như những sản phẩm khác trong bộ dataset mà nhóm đã thu thập. 
+      + Số lượng hình ảnh của các class sản phẩm trong clip nhiều (đều khoảng từ 100 – 150 tấm) nên model có nhiều dữ liệu để học và detect tốt hơn.
+
+## Model Faster R- CNN:
+* Trong bài toán này, chúng em sử dụng mô hình Faster R-CNN trên Detectron2 do Facebook Reseach xây dựng.
+* Detectron2 được xây dựng bởi Facebook, một thư viện cung cấp mã nguồn mở để training model trên custom dataset của nhóm. Model zoo của Detectron2 rất phong phú, có thể sử dụng để pretrained và chúng em quyết định lựa chọn model Faster R-CNN để pretrained.
+* Faster R-CNN là một mô hình với cấu trúc gần như tương tự với R-CNN và được cải thiện đáng kể về tốc độ training, sau khi trích xuất đặc trưng ảnh Faster R-CNN không sử dụng thuật toán để tìm ra khu vực có khả năng chứa các đối tượng mà thêm hẳn một mạng CNN để tìm ra nó. 
+<p align ="middle">
+  <img src="https://user-images.githubusercontent.com/55471582/128677840-c47ade54-484f-419a-8855-cb9c2c218f8f.png" />
+</p>
+<div align = "center">Kiến trúc của model Faster R - CNN
+</div>
+
+* Chúng em sử dụng file Pretrained Weights X-101-32x8d.pkl để tiếp tục train cho model của mình (cũng như với file pretrained – weights yolov4, do dataset của chúng em nhỏ nhưng khá tương đồng nhưn với datasets COCO dùng để train model data for objects detection nên sử dụng file Pretrained Weights giúp tiết kiệm thời gian train lại toàn bộ model từ đầu)
+
+<p align ="middle">
+  <img src="https://user-images.githubusercontent.com/55471582/128682141-b7468fdf-6e93-4e88-8059-a6ca64f64ed9.png" />
+</p>
+
+* **Quá trình chuẩn bị dữ liệu cho model(tự code):**
+  1. Từ dữ liệu có sẵn đã được labeled sẵn khi train bằng model yolov4, nhóm sẽ convert các files annotations yolo format \*.txt sang files annotations VOC format \*.xml, chúng em có tham khảo từ source code github ở đây [yolo2voc](https://github.com/hai-h-nguyen/Yolo2Pascal-annotation-conversion)
+  2. Convert files từ format files annotations VOC format \*.xml sang format file annotation COCO \*.json, chúng em có tìm và tham khảo được source code từ repository [voc2coco](https://github.com/yukkyo/voc2coco), quá trình chuẩn bị tài nguyên files khá rườm rà
+    * Hai tập labels train và txt chứa các files annotaions \*.xml đã được labels trước đó
+    * Một file train.txt chứa tên file \*.xml có trong tập train
+    * Một file valid.txt chứa tên file \*.xml có trong tập valid
+    * Một file txt chứa path của các file có trong tập train
+    * Một file txt chứa path của các file có trong tập valid
+    * Một file classes.txt chứa các nhãn theo đúng thứ tự.
+  3. Khác với yolov4, Faster R - CNN sử dụng detectron2 yêu cầu hai folder train và valid nằm trong hai folder riêng biệt với nhau <span>&#8594;</span> Giải pháp: Sử dụng module split-folders để chia theo tỉ lệ **80/20**
+
+* **Quá trình chuẩn bị dữ liệu cho mode(có sự hỗ trợ của Roboflow Team):**
+* Roboflow team có hỗ trợ để chuẩn bị các chuyển đổi dữ liệu từ file format VOC \*.xml sang flie format COCO \*.json.
+* Khó khăn: Server của Roboflow Team có thể xử lý được data 17.3 GB của chúng em, nhưng phải trả phí, mua gói premium (999$/tháng) <span>&#8594;</span> Giải pháp: SGmail trình bày hoàn cảnh hiện tại và mong nhận được sự hỗ trợ, được roboflow cấp cho một account premium.
+
+<p align ="middle">
+  <img src="https://user-images.githubusercontent.com/55471582/128686116-18070d8d-2644-46cd-830e-8420d9febd62.png" />
+</p>
+
+* **Quá trình training - dựa trên basline Detectron2 của Roboflow Team:**
+* Upload dữ liệu lên google drive
+* Đặc biệt riêng đối với detectron2, đối với mỗi tập dataset ta phải dùng hàm **register_coco_instances()** để “đăng ký” thì mới model mới có thể hiểu để training, đối với các video mẫu dùng để detect sau này, ta cũng thực hiện đăng ký tương tự, mỗi tập dataset ứng ứng một tên đăng ký riêng.
+* Chỉnh sửa file config
+* Các thông số chúng em tinh chỉnh trong lần training đầu tiên(dựa trên file config ban đầu là **faster_rcnn_X_101_32x8d_FPN_3x.yaml**
+  * IMS_PER_BATCH = 4 
+  * MAX_ITERS = 398000
+  * CLASSES = 200 ( = 199 + 1)
+  * EVAL_PERIOD = 500
+  * BATCH_SIZE_PER_IMAGE = 64
+Nhận thấy model training nhanh, nhóm chỉnh sửa lại file config như sau:
+IMS_PER_BATCH = 8 <span>&#8594;</span> Model chạy tốc độ tăng đáng kể.
+
+* **Nhận xét về Khó khăn và Cách giải quyết trong quá trình Traning Model Faster R- CNN sử dụng framework Detectron2:**
+*  Quá trình Training diễn ra nhanh hơn so với model yolov4, tuy nhiên vẫn còn lâu và chậm nguyên nhân: số lượng data nhiều, dù số lượng hình ảnh được load trong cùng một batch là 8 gấp đôi so với model yolov4, nhưng với kích thước data lớn thì cũng không thực sự khả quan.
+<span>&#8594;</span> **Giải pháp:** Như đã giải thích từ đầu, đây là một điều không thể tránh khỏi nhầm tránh lỗi CUDA out of memory. Khi tăng img_per_batch > 8 thì sẽ xảy ra lỗi như trên
+* Quá trình chuẩn bị file phức tạp, mỗi lầ muốn train, test trên một tập dữ liệu mới phải đăng ký. 
+
+* **Đánh giá Model:**
+* Faster RCNN sử dụng framework detectron2 visualize độ chính xác thể hiện qua TensorBoard
+* Model Faster R-CNN sử dụng framework detectron2 sử dụng các chỉ số mAP, AP50, AP75 để đánh giá độ dự đoán chính xác của model.
+
+
+<p align ="middle">
+  <img src="https://user-images.githubusercontent.com/55471582/128689134-704036c5-7aba-48bc-b29c-0a0b40ae7e8b.png" />
+  <img src="https://user-images.githubusercontent.com/55471582/128689155-5b284d4d-3d08-41c6-a76f-c5d63285d1be.png" />
+</p>
+<div align = "center">Chỉ số mAP50 sau khi train được 46000 iterations
+</div>
+
+* **Quá trình Detect trên tập Video Test:**
+* Việc sử dụng thêm model FASTER R-CNN với mục đích chủ yếu là để so sánh performance với model yolov4 nên chúng em sẽ chỉ dừng ở bước detect được trên video.
+* Sử dụng framework có sẵn detectron2 của facebook research để detect (thao tác ngay trên colab)
+* Sử dụng hàm register_coco_instances() để đăng ký dataset cho video chuẩn bị được detect
+* Khó khăn: detectron2 của facebook reseach chỉ cung cấp visulize detect vị trí vật thể, không hiện class_name của vật thể đó nếu class không nằm trong các class_names có sẵn trong COCO dataset (chỉ hiện thỉ bbox và confidence score) <span>&#8594;</span> **Giải pháp:** Thay đổi MetaData mặc định của detectron2, “đăng ký” một metadataset chứa thông tin của tập dataset bao gồm name_classes.
+* Sử dụng file weights đã train từ trước và file video tests, tiến hành detect.
+
+* **Phân tích Trên các mẫu được Detect:**
+* Trong phần trên, chúng em đã không phân tích dựa trên tiêu chí các mẫu dữ liệu video test nào mà model faster rcnn detect đúng hay sai, mà sẽ detect lại các mẫu dữ liệu video mà model yolov4 đã detect ở phần trước để đưa ra nhận xét cũng như so sánh:
+    * Model Faster R – CNN detect tốt hơn so với model yolov4, mặc dù khi so sánh chỉ số AP50 khi training đến iteration 46k (model yolov4 – 98.4%, model faster rcnn – 99.92% ) chênh nhau không nhiều, các sản phẩm model yolov4 không detect ra trên video như Mì Hảo Hảo Sa Tế Hành, Hộp Cá Sốt Cà 3 Cô Gái,... Thì model faster rcnn thực hiện tốt điều đó.
+    * Model Faster R – CNN giải quyết được tốt hơn vấn đề phân biệt các sản phẩm có màu sắc và hình dạng tương đối giống nhau như bơ thực vật Meizan, bơ Marrgarin,....
+Bouding Box các vật thể như khi xác định localization của vật thể chính xác hơn.
+    **Nguyên nhân:** Do model faster rcnn train đến ieration 325000 nên cải thiện và nắm bắt đặc trưng dữ liệu tốt hơn. 
+
+## So Sánh Hai Model:
+
+<p align="center">
+
+</p>
+
+
+| Các tiêu chí | Yolov4 | Faster R – CNN sử dụng framework detectron2 |
+| ---          | ---    | ---                                         |
+| Tài nguyên phục vụ cho model | Chỉ cần hai format file quan trọng và chủ chốt: files hình ảnh và file annotations \*.txt(tất cả đều chung một folder. Quy trình chuẩn bị tương đối đơn giản. | Cần hai dạng format files cơ bản và chủ chốt: files hình ảnh và files annotation \*.json. Quá trình chuẩn bị files khá rườm rà và phức tạp. |
+| Tốc độ Training | Chậm, càng về sau càng chậm (do quy định hạn chế tài nguyên GPU của Google Colab), trung bình 1000 iteration mất 3h để training xong | Tốc độ nhanh đáng kể so với khi training model yolov4, tối thiểu tăng gấp đôi do (do đã tăng số lượng hình ảnh trong mỗi batch) |
+| Bỏ sót Objet | Có, bỏ sót object số lượng nhiều hơn model faster rcnn | Có, nhưng số lượng không đáng kể |
+| Performance (mAP50) - Chỉ xét đến iteration 46k | 98.37% | 99.92% |
+| Các bbox detect bị chồng chéo nhau | Có, nhưng các trường hợp xảy ra rất ít. | Số lượng trường hợp xảy ra nhiều hơn so với model yolov4 |
+| Nhiều sản phẩm xuất hiện trong một khung hình | Không tốt, đa số các trường hợp Bbox xác định vị trí bao quát luôn cả sản phẩm khác. | Tốt hơn model yolov4 |
+| Tốc độ nhận diện Object | Tốc độ nhận diện xử lý chậm hơn model Faster R- CNN | Tốc độ nhận diện xử lý nhanh |
+
 <a name="ungdung"></a>
 <h1>5. Ứng Dụng và Hướng Phát Triển </h1>
 
+
+<h2> Bài toán đặt ra </h2>
+<p> Bài Toán “Nhận Diện Sản Phẩm Thương Mại” mà nhóm em hướng đến để giải quyết là bài toán có hướng phát triển và ứng dụng cao, đặc biệt là trong thời đại công nghệ ngày càng phát triển và “xâm nhập” vào thị trường mua sắm. Nếu model được cải tiến để giải quyết bài toán với model có độ chính xác cao, thì bài toán của chúng em sẽ góp phần quan trọng trong việc xây dựng mô hình mua sắm công nghệ cao, điển hình với dự án của một số công ty lớn sau: </p>
+
+<ul>
+  <li> Chuỗi của hàng Amazon Go của công ty Amazon với slogan “Just Walk Out”. </li>
+  <li> Dự án quầy thanh toán không thu ngân của công ty Abto Software (Abto Cashierless Checkout). </li>
+  <li> .... </li>
+</ul>
+ 
+ 
+<h2> Hướng cải tiến </h2>
+<p> Như đã nói ở trên, để có thể giải quyết bài toán “Nhận Diện Sản Phẩm Thương Mại” ở mức độ ứng dụng được vào trong các mô hình mua sắm công nghệ cao, thì với model như trên của chúng em cần phải có những hưỡng cải tiến như sau: </p>
+
+<ul>
+  <li> <strong>Về Data</strong> </li>
+  <ul> 
+    <li> Tăng sự đa dạng và số lượng, loại sản phẩm nhiều hơn, ngoài ra phải thường xuyên thu thập data vì mẫu mã sản phẩm, giá cả liên tục thay đổi, ngoài ra cũng phải đáp ứng được các chương trình khuyến mãi của các chuỗi cửa hàng,... </li>
+    <li> Quy trình thu thập data phải diễn ra chặt chẽ, có sự đầu tư về phần cứng thiết bị, ví dụ như set up một phòng lab riêng biệt chỉ dành cho việc chụp hình các sản phẩm, các camera set up có giá đỡ cố định ở các góc, ánh sáng điều kiện, phù hợp với bối cảnh thực tế, chú ý đến vấn đề tạo nên một balanced data,... => Clean Data </li>
+    <li> Tăng cường dữ liệu, sử dụng các kỹ thuật như Data Augmentation (blur, gray scale, cutout, cutmix, rotate,...),...việc lựa chọn các bước tăng cường dữ liệu rất quan trọng, không phải phương pháp nào cũng tốt cho tập dữ liệu. </li>
+  </ul>
+  
+  <li> <strong>Về Model</strong> </li>
+  <ul>
+    <li> Model trên của chúng em bị overfitting, nên phần cải tiến data như trên có thể sẽ giúp model well generalize. </li>
+    <li> Ngoài ra, cũng còn một số biện pháp cải thiện model như điều chỉnh độ phức tạp lại của networks, thay đổi các tham số, sử dụng kỹ thuật early stopping,... </li>
+    <li> Việc sử dụng pretrained model cũng ảnh hưởng tới kết quả detect, nên cân nhắc việc sử dụng pretrained model. </li>
+  </ul>
+  
+  <li> <strong>Để bài toán được mở rộng và phát triển, chúng em có ý tưởng thêm một số chức năng như sau:</strong> </li>
+  <ul>
+    <li> Sử dụng bảng điện tử trực truyết để người dùng có thể theo dõi tình trạng đơn hàng ở quầy thanh toán, tăng tương tác giữa người dùng với hệ thống,... </li>
+    <li> Phát triển một ứng dụng điện thoại kết nối với dữ liệu mua sắm của người dùng, để người dùng tiện tra cứu thông tin, giá hóa đơn, sản phẩm,.. Tuy nhiên cũng đảm bảo bảo mật thông tin người dùng. </li>
+  </ul>
+</ul>
 
 
