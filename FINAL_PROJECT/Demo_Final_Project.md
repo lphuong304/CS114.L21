@@ -197,7 +197,9 @@ Sau quá trình cân nhắc, nhóm quyết định sẽ sử dụng hai model đ
 
 * Quá trình training model:
   1. Upload bộ dữ liệu đã được nhóm chuẩn bị sẵn lên Drive
-  2. Set up lại các file cần thiết và tài nguyên để chuẩn bị cho việc training
+  2. Clone các source code cần thiết để train model - [AlexyAB/darknet](https://github.com/AlexeyAB/darknet)
+  3. Set up lại các file cần thiết và tài nguyên để chuẩn bị cho việc training
+      + Chuẩn bị files yolo.names chứa tên các classes sẽ được detect trong bộ datasets, file train.txt chứa các path files trong tập train, file valid.txt chứa các path files trong tập valid, file yolo.data chứa tên file set up cần thiết cho tập train
       + File Config để set up lại, cụ thể vì dataset của chúng em khá lớn, nên trong quá trình training, phải set up lại khá nhiều lần mới có thể train thuận lợi được.
       + Các thông số mà em tinh chỉnh có ý nghĩa ảnh hưởng tới quá trình trainning như sau:
           + **width, height(kích thước network)**: các bức ảnh chúng em đưa vào đề sẽ được yolov4 resize nó lại trước khi trainig, tuy nhiên vẫn giữ nguyên tỉ lệ bức ảnh.
@@ -208,10 +210,24 @@ Sau quá trình cân nhắc, nhóm quyết định sẽ sử dụng hai model đ
           + **filters** (cố định trong suốt quá trình train)
           
 <p align ="middle">
-  <img src ="https://raw.githubusercontent.com/lphuong304/CS114.L21/byPhun/FINAL_PROJECT/Untitled%20Diagram.svg" />
- </p>
+  <img src="https://raw.githubusercontent.com/lphuong304/CS114.L21/byPhun/FINAL_PROJECT/svg_report/edit_Config.svg" />
+</p>
 
+  3. Dowload file pretrain weights **(yolov4.conv.137)** cho lần training model đầu tiên.
+  4. Chỉnh sửa source code trong file `detector.c` để model sẽ tự động tính mAP sau khi traninig được `1/10 epoch` và `lưu weights` sau khi train được `1000 ierations`  
+  5. Training.
+  6. Sử dụng file 
+* Nhận xét về khó khăn và cách giải quyết trong quá trình Training Model Yolov4:       
+  * Quá trình Training diễn ra rất chậm, **nguyên nhân:** số lượng data nhiều, tuy nhiên số lượng hình ảnh được xử lý cùng một lúc trong quá trình training model là `2` nên tốn thời gian rất lâu.
+   
+<span>&#8594;</span> **Giải pháp**: Như đã giải thích từ đầu, đây là một điều không thể tránh khỏi nhầm tránh lỗi `CUDA out of memory`.
+  * Quá trình Training hay bị crashed đột ngột, dẫn đến phải train lại, **nguyên nhân:** file path dẫn đến tập tin có vấn đề, ví dụ đối với các file có tên như, tên file có dấu, tên file có dấu cách.
+   
+<span>&#8594;</span> **Giải pháp**: Tìm và xóa các file như trên, do số lượng file không nhiều nên chúng em list ra trong một file txt và dùng chức năng search để xóa bằng “cơm”.
 
+<span>&#8594;</span> Model training khi train đến iteration từ 46000 trở đi không có dấu hiệu giảm nên chúng em quyết định dừng train và dùng các file weights đã train được đem đi test model
+
+* **Đánh giá Model yolov4:**  
 <a name="ungdung"></a>
 <h1>5. Ứng Dụng và Hướng Phát Triển </h1>
 
