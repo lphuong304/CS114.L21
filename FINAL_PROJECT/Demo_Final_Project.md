@@ -523,9 +523,9 @@ Bouding Box các vật thể như khi xác định localization của vật th�
   </ul>
 </ul>
 
-# 6. Phân Công Công Việc:
 
-# 7. Nguồn Tham Khảo:
+<a name="thamkhao"></a>
+# 6. Nguồn Tham Khảo:
 * Tìm hiểu về model Yolov4:
 
 [1] https://aicurious.io/posts/tim-hieu-yolo-cho-phat-hien-vat-tu-v1-den-v5/
@@ -537,6 +537,7 @@ Bouding Box các vật thể như khi xác định localization của vật th�
 [4] https://paperswithcode.com/method/cspdarknet53
 
 [5] https://towardsdatascience.com/yolov5-compared-to-faster-rcnn-who-wins-a771cd6c9fb4
+
 * Tìm hiểu về model Faster R - CNN
 
 [1] https://viblo.asia/p/trien-khai-faster-rcnn-cho-cac-bai-toan-detection-OeVKBMoE5kW
@@ -554,6 +555,7 @@ Bouding Box các vật thể như khi xác định localization của vật th�
 [3] https://github.com/facebookresearch/detectron2/issues/1028
 
 * Tìm hiểu về các định nghĩa
+
 [1] https://phamdinhkhanh.github.io/2020/05/31/CNNHistory.html
 
 [2] https://pbcquoc.github.io/cnn/
