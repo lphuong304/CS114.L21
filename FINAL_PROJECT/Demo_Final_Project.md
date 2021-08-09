@@ -523,4 +523,46 @@ Bouding Box các vật thể như khi xác định localization của vật th�
   </ul>
 </ul>
 
+# 6. Phân Công Công Việc:
 
+# 7. Nguồn Tham Khảo:
+* Tìm hiểu về model Yolov4:
+
+[1] https://aicurious.io/posts/tim-hieu-yolo-cho-phat-hien-vat-tu-v1-den-v5/
+
+[2] https://arxiv.org/pdf/2004.10934.pdf
+
+[3] https://phamdinhkhanh.github.io/2020/03/09/DarknetAlgorithm.html
+
+[4] https://paperswithcode.com/method/cspdarknet53
+
+[5] https://towardsdatascience.com/yolov5-compared-to-faster-rcnn-who-wins-a771cd6c9fb4
+* Tìm hiểu về model Faster R - CNN
+
+[1] https://viblo.asia/p/trien-khai-faster-rcnn-cho-cac-bai-toan-detection-OeVKBMoE5kW
+
+[2] https://paperswithcode.com/lib/detectron2/faster-r-cnn
+
+[3] https://viblo.asia/p/state-of-the-art-instance-segmentation-chi-vai-dong-code-voi-detectron2-vyDZO7W9Zwj
+
+* Tìm hiểu về thư việc detectron2
+
+[1] https://github.com/facebookresearch/detectron2/blob/master/MODEL_ZOO.md#faster-r-cnn
+
+[2] https://papers.nips.cc/paper/2015/file/14bfa6bb14875e45bba028a21ed38046-Paper.pdf
+
+[3] https://github.com/facebookresearch/detectron2/issues/1028
+
+* Tìm hiểu về các định nghĩa
+[1] https://phamdinhkhanh.github.io/2020/05/31/CNNHistory.html
+
+[2] https://pbcquoc.github.io/cnn/
+
+[3] https://viblo.asia/p/tim-hieu-ve-convolutional-neural-network-va-lam-mot-vi-du-nho-ve-phan-loai-anh-aWj53WXo56m
+
+* Tìm hiểu về mAP
+[1]
+
+[2]
+
+[3]
