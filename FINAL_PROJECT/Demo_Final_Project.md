@@ -214,7 +214,7 @@ Sau quá trình cân nhắc, nhóm quyết định sẽ sử dụng hai model đ
 </p>
 
   3. Dowload file pretrain weights **(yolov4.conv.137)** cho lần training model đầu tiên.
-  4. Chỉnh sửa source code trong file `detector.c` để model sẽ tự động tính mAP sau khi traninig được `1/10 epoch` và `lưu weights` sau khi train được `1000 ierations`  
+  4. Chỉnh sửa source code trong file `detector.c` để model sẽ tự động tính mAP sau khi traninig được `1/10 iteration` và `lưu weights` sau khi train được `1000 ierations`  
   5. Training.
   6. Sử dụng file 
 * Nhận xét về khó khăn và cách giải quyết trong quá trình Training Model Yolov4:       
@@ -240,16 +240,41 @@ Sau quá trình cân nhắc, nhóm quyết định sẽ sử dụng hai model đ
 <p align ="middle">
   <img src="https://user-images.githubusercontent.com/55471582/128654429-26907296-9b3c-4c68-8600-cc44bf76f59c.png" />
 </p>
-<div align = "center">Minh họa cách tính các chỉ số như precision, tecal, IoU</div>
+<div align = "center">Minh họa cách tính các chỉ số như precision, recall, IoU</div>
 
 <p align ="middle">
   <img src ="https://user-images.githubusercontent.com/55471582/128654434-7d2f0aa2-eb6f-4a43-8868-f0f3570b6181.png" />
 </p>
-<div align = "center">Sơ đồ trực quan cách tính AP dựa vào chỉ số precision và recall</div>
+<div align = "center">Sơ đồ trực quan cách tính AP dựa vào chỉ số precision và recall <br>AP là Average Precision - độ chính xác trung bình </br></div>
 
-
+  * **AP50**: là độ chính xác với IoU = 0.5
+  * **AP75**: là độ chính xác với IoU = 0.75
+  * IoU có ý nghĩa quan trọng đối với chỉ số mAP và việc lựa chọn giá trị của IoU sẽ ảnh hưởng đến kết quả đánh giá của model. Trong các bài toán nhận diện vật thể, chúng ta tính toán chỉ số `precision` và `recall` với một ngưỡng IoU cho trước, ví dụ đơn giản nhất là nếu ta cho ngưỡng IoU bằng `0.4` và chỉ số IoU sau khi tính toán trên bbox được dự đoán là `0.5` thì ta tính rằng bbox được dự đoán đó là **đúng**, tuy nhiên nếu đặt ngưỡng IoU bằng `0.6` thì  với chỉ số IoU sau khi tính toán trên bbox được dự đoán là `0.5` thì bbox được dự đoán đó là **sai**.
+  * Model yolov4 trực quan hóa các chỉ số đánh giá qua từng iterations trong quá trình train bằng một chart với trục `x` là các `iterations` trong quá trình training, trục `y` thể hiện các đánh giá tương ứng với `avg_loss` và `mAP` trong suốt quá trình train, trong đó `mAP` sẽ được model tính toán lại theo sau khi train được 1/10 iteration.
+  * Khó khăn khi đánh giá model yolov4:
+    * Mặc định ban đầu, do chính sách của colab notebook, các session khi train liên tục bị crashed giữa chừng, làm ảnh hưởng đến quá trình nắm bắt độ chính xác của model.
+    * Nhóm đã có sai sót ban đầy do chủ quan nên đã set up theo mặc định là model sẽ cập mAP sau khi train hết 4 iterations một cách liên tục và vì bị crashed thường xuyên cho nên sẽ tốn thời gian gây khó khăn lớn trong trong quá trình tính được mAP.
+   
+    <span>&#8594;</span> **Giải pháp:** Sau khi train được 45000 ierations đầu tiên, nhóm fix lại source code file `detector.c` để model tính lại map sau khi train được `1/10` iterations, giúp model tính mAP nhanh hơn.
     
-    <span>&#8594;</span> 
+<p align ="middle">
+  <img src="https://user-images.githubusercontent.com/55471582/128661000-1a745aa5-a218-4101-a228-65e2433abf26.png" />
+</p>
+<div align = "center">Yolov4 visualize độ chính xác thể hiện qua chart.png
+</div>
+
+* **Quá trình Detect Video trên tập video test:**  
+* Video được detect phải có những thông tin chính xác với Ouput bao gồm: bbox xác định vật thể, class_name của vật thể, confidence-score, tổng số lượng sản phẩm xuất và tổng giá sản phẩm xuất hiện suốt video. 
+  1. Đưa về bài toán **DeepSort** sử dụng file pretrained weights đã train trên với model Yolov4.
+    * Mỗi object sẽ được gán một *track-id* riêng để phân biệt các sản phẩm.
+    * Thuật toán phải them dõi đối tượng và gán có định một trạc-id suốt video.
+    
+    <span>&#8594;</span> Xác định yêu cầu: Nhận diện đúng các sản phẩm, số lượng vật thể sẽ được lưu vào và sẽ được cộng dồn khi phát hiện vật thể cùng khác cùng sản phẩm.
+  2. Tham khảo source code từ repository [yolov4-deepsort](https://github.com/theAIGuysCode/yolov4-deepsort)
+  3. Chỉnh sửa, thêm function và flag `--count` để đếm sản phẩm, lưu lại và cộng dồn vào trong suốt quá trình detect video, thêm function convert files giá excel sang format dict, tính tổng giá, xuất bill,...
+  4. Download file weights sau khi train để đem về máy local detect. Sử dụng files weights vừa mới tải về để save thành model sử dụng để detect video. Nếu sử dụng file weights mới, thì phải có bước này. Chạy file code save_model.py, gọi flag `--model` và lưu thành tên model muốn lưu - ví dụ command bên dưới lưu thành model tên `yolov4`
+  ```python save_model.py --model yolov4``
+  6. Ví dụ khi tiến hành detect video test3.mp4 nằm trong folder `./data/video`, ta làm như sau 
 <a name="ungdung"></a>
 <h1>5. Ứng Dụng và Hướng Phát Triển </h1>
 
