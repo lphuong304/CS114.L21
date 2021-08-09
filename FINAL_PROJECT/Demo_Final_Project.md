@@ -176,49 +176,50 @@ Dữ liệu được tụi em tự thu thập
 <ul>
   <li> <strong>Khoảng các giữa các sản phẩm nhỏ hơn nhiều so với khoảng cách từ sản phẩm tới biên màn hình:</strong> </li>
   <div align="middle">
-    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/NhieuSp01.png" width="200" height="200" />
-    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/NhieuSp02.png" width="200" height="200" />
+    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/NhieuSp01.png" style="width:30%;"/>
+    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/NhieuSp02.png" style="width:30%;"/>
   </div>
   <ul> => Giải pháp: trong một khung hình chỉ nên xuất hiện một sản phẩm. </ul>
 
   <li> <strong>Các sản phẩm có đặc điểm cùng màu sắc, cùng hình dáng:</strong> </li>
-  <div align="middle"">
-    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/HopDo01.jpg" width="200" height="200" />
-    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/HopDo02.jpg" width="200" height="200" />
+  <div align="middle">
+    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/HopDo01.jpg" style="width:30%;"/>
+    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/HopDo02.jpg" style="width:30%;"/>
   </div>
   <div align="middle">
-    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/HopTron01.jpg" width="200" height="200" />
-    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/HopTron02.jpg" width="200" height="200" />
+    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/HopTron01.jpg" style="width:30%;"/>
+    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/HopTron02.jpg" style="width:30%;"/>
   </div>
   <div align="middle">
-    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/HopVang01.jpg" width="200" height="200" />
-    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/HopVang02.jpg" width="200" height="200" />
+    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/HopVang01.jpg" style="width:30%;"/>
+    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/HopVang02.jpg" style="width:30%;"/>
   </div>
   <div align="middle">
-    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/LonXanh01.jpg" width="200" height="200" />
-    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/LonXanh02.jpg" width="200" height="200" />
+    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/LonXanh01.jpg" style="width:30%;"/>
+    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/LonXanh02.jpg" style="width:30%;"/>
   </div>
 
   <li> <strong>Các sản phẩm có cùng hình dáng khác tông màu:</strong> </li>
   <div align="middle">
-    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/Tru01.jpg" width="200" height="200" />
-    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/Tru02.jpg" width="200" height="200" />
+    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/Tru01.jpg" style="width:30%;"/>
+    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/Tru02.jpg" style="width:30%;"/>
   </div>
   <div align="middle">
-    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/HopTron01.jpg" width="200" height="200" />
-    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/HopTron02.jpg" width="200" height="200" />
+    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/HopTron01.jpg" style="width:30%;"/>
+    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/HopTron02.jpg" style="width:30%;"/>
   </div>
                                                                                                                                    
   <li> <strong>Các sản phẩm có tông màu khác hình dạng:</strong> </li>
   <div align="middle">
-    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/Do01.jpg" width="200" height="200" />
-    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/Do02.jpg" width="200" height="200" />
+    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/Do01.jpg" style="width:30%;"/>
+    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/Do02.jpg" style="width:30%;"/>
   </div>
   <div align="middle">
-    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/Xanh01.jpg" width="200" height="200" />
-    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/Xanh02.jpg" width="200" height="200" />
+    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/Xanh01.jpg" style="width:30%;"/>
+    <img src="https://raw.githubusercontent.com/19522450/CS114.L21/main/FINAL_PROJECT/image/Xanh02.jpg" style="width:30%;"/>
   </div>
 </ul>
+
 
 <a name="training"></a>
 # **4. Training Và Đánh Giá Model**
