@@ -75,7 +75,7 @@
 
 * **Theo bài báo**
 
-Họ sử dụng nhiều bộ dữ liệu cùng với đó là công nghệ khác nhau trên từng bộ dữ liệu đem lại những hiệu quả khác nhau. Bộ dữ liệu từ nhiều nguồn, bao gồm **GroZi-120, GroZi-3.2k, Freiburg Grocery Dataset, Cigarette Dataset, Grocery Store Dataset, GP181 Dataset, D2S Dataset và RPC Dataset**. Với từng bộ dữ liệu, họ có sử dụng những phương thức tiếp cận khác nhau, như với:
+Họ sử dụng nhiều bộ dữ liệu cùng với đó là công nghệ khác nhau trên từng bộ dữ liệu đem lại những hiệu quả khác nhau. Bộ dữ liệu từ nhiều nguồn, bao gồm **GroZi-120, GroZi-3.2k, Freiburg Grocery Dataset, Cigarette Dataset, Grocery Store Dataset, GP181 Dataset, D2S Dataset và RPC Dataset**. Với từng bộ dữ liệu, họ có sử dụng những phương thức tiếp cận khác nhau, như với **bộ dữ liệu D2S**:
 
 | Approaches    |   mAP(%)   |   mAP50(%)   |   mAP75(%)   |
 | :------------:| :--------: | :----------: | :----------: | 
