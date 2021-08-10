@@ -75,7 +75,15 @@
 
 * **Theo bài báo**
 
-Họ sử dụng nhiều bộ dữ liệu cùng với đó là công nghệ khác nhau trên từng bộ dữ liệu đem lại những hiệu quả khác nhau. Bộ dữ liệu từ nhiều nguồn, bao gồm **GroZi-120, GroZi-3.2k, Freiburg Grocery Dataset, Cigarette Dataset, Grocery Store Dataset, GP181 Dataset, D2S Dataset và RPC Dataset**. Với từng bộ dữ liệu, họ có sử dụng những phương thức tiếp cận khác nhau, như với **GroZi-3.2k cho mAP 73.93%, GP-20 cho mAP 65.55% và GP181 cho mAP 85.79%**
+Họ sử dụng nhiều bộ dữ liệu cùng với đó là công nghệ khác nhau trên từng bộ dữ liệu đem lại những hiệu quả khác nhau. Bộ dữ liệu từ nhiều nguồn, bao gồm **GroZi-120, GroZi-3.2k, Freiburg Grocery Dataset, Cigarette Dataset, Grocery Store Dataset, GP181 Dataset, D2S Dataset và RPC Dataset**. Với từng bộ dữ liệu, họ có sử dụng những phương thức tiếp cận khác nhau, như với:
+
+| Approaches    |   mAP(%)   |   mAP50(%)   |   mAP75(%)   |
+| :------------:| :--------: | :----------: | :----------: | 
+|  Mask R-CNN   |    78.3    |     89.8     |      84.9    | 
+|  FCIS         |    68.3    |     88.5     |      80.9    |
+|  Faster R-CNN |    78.0    |     90.3     |      84.8    |
+|  RetinaNet    |    80.1    |     89.6     |      84.5    |
+
 * **Tổng kết của bài báo nghiên cứu**
   * Thách thức:
     * Phân loại bài toán với quy mô lớn
@@ -89,7 +97,7 @@ Họ sử dụng nhiều bộ dữ liệu cùng với đó là công nghệ khá
     * Joint feature learning from text information on packaging
     * Incremental learning with the CNN
     * The regression-based object detection methods for retail product recognition
-* **Nhận xét từ các bài báo**: Bài báo có đề cập đến việc YOLO9000 đã cung cấp một phương pháp có thể phát hiện 9000 lớp đối tượng, nhưng không khả thi trong trường hợp phát hiện sản phẩm vì chi phí chú thích cao. 
+* **Nhận xét từ bài báo**: Bài báo có đề cập đến việc YOLO9000 đã cung cấp một phương pháp có thể phát hiện 9000 lớp đối tượng, nhưng không khả thi trong trường hợp phát hiện sản phẩm vì chi phí chú thích cao. 
 
 <a name="dulieu"></a>
 # **3.Xây Dựng Bộ Dữ Liệu**
